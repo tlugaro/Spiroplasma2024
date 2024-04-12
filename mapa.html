@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_06be8438c45fbb1c3116c0e3ef75f3f8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; 
+                 bottom: 50px; right: 50px; width: 150px; height: 200px; 
+                 border: 2px solid #999; border-radius: 5px; z-index: 1000; font-size: 14px;
+                 background-color: rgba(255, 255, 255, 0.9);
+                 text-align: center;
+                 ">
+         <div style="padding: 5px;">
+             <strong>Damage</strong>
+         </div>
+         <div style="padding: 5px;">
+             &lt; 20: <svg height="20" width="20"><circle cx="9" cy="9" r="9" fill="green" /></svg>
+         </div>
+         <div style="padding: 5px;">
+             20-40: <svg height="20" width="20"><circle cx="9" cy="9" r="9" fill="orange" /></svg>
+         </div>
+         <div style="padding: 5px;">
+             40-60: <svg height="20" width="20"><circle cx="9" cy="9" r="9" fill="#e9a5a5" /></svg>
+         </div>
+         <div style="padding: 5px;">
+             60-80: <svg height="20" width="20"><circle cx="9" cy="9" r="9" fill="red" /></svg>
+         </div>
+         <div style="padding: 5px;">
+             &gt; 80: <svg height="20" width="20"><circle cx="9" cy="9" r="9" fill="darkred" /></svg>
+         </div>
+      </div>
+     
+    
+            <div class="folium-map" id="map_06be8438c45fbb1c3116c0e3ef75f3f8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_06be8438c45fbb1c3116c0e3ef75f3f8 = L.map(
+                "map_06be8438c45fbb1c3116c0e3ef75f3f8",
+                {
+                    center: [-30.099312366666666, -62.250406030303026],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_baf269f6ff8407a050a13727d58d54e5 = L.tileLayer(
+                "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png",
+                {"attribution": "IGN Argentina", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 5, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_baf269f6ff8407a050a13727d58d54e5.addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var marker_f8ba0302ae233ff50b584c0cb4e2eb52 = L.marker(
+                [-31.7941708, -62.6091979],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_b73068004fdd0091639ebed0c629e63f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f8ba0302ae233ff50b584c0cb4e2eb52.setIcon(icon_b73068004fdd0091639ebed0c629e63f);
+        
+    
+        var popup_3b2e691bafc3edc0835b78c5c16d53ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c0372d93c61064b28efd43d3559cf9f = $(`<div id="html_5c0372d93c61064b28efd43d3559cf9f" style="width: 100.0%; height: 100.0%;"><p >Algunas plantas caidas, poco daño, espigas chicas</p><p>Damage: 5</p><div style='display: flex;'><a href='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' target='_blank'><img src='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' target='_blank'><img src='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_3b2e691bafc3edc0835b78c5c16d53ce.setContent(html_5c0372d93c61064b28efd43d3559cf9f);
+            
+        
+
+        marker_f8ba0302ae233ff50b584c0cb4e2eb52.bindPopup(popup_3b2e691bafc3edc0835b78c5c16d53ce)
+        ;
+
+        
+    
+    
+            var marker_73142ad9bc182212084ff4d21b637401 = L.marker(
+                [-27.4381151, -61.3085507],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_bf48fc47d9862a465a633c1926be284c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_73142ad9bc182212084ff4d21b637401.setIcon(icon_bf48fc47d9862a465a633c1926be284c);
+        
+    
+        var popup_9f3794877944bbadb236d997eb98422b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48ff1481c8fd55ae7a884907452782ba = $(`<div id="html_48ff1481c8fd55ae7a884907452782ba" style="width: 100.0%; height: 100.0%;"><p >Algunas plantas quebradas y muertas, mucha infección de spiroplasma, espigas muy variadas</p><p>Damage: 45</p><div style='display: flex;'><a href='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' target='_blank'><img src='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' target='_blank'><img src='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_9f3794877944bbadb236d997eb98422b.setContent(html_48ff1481c8fd55ae7a884907452782ba);
+            
+        
+
+        marker_73142ad9bc182212084ff4d21b637401.bindPopup(popup_9f3794877944bbadb236d997eb98422b)
+        ;
+
+        
+    
+    
+            var marker_85911f976542d17e920c27626e861188 = L.marker(
+                [-31.8216946, -62.7629656],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_71270bccf267ff7e2190fe226dc36d3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_85911f976542d17e920c27626e861188.setIcon(icon_71270bccf267ff7e2190fe226dc36d3e);
+        
+    
+        var popup_92c8ae501a370a8a4125abec25e75c59 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7169e5923263b84a3fbec0ac5cb9e050 = $(`<div id="html_7169e5923263b84a3fbec0ac5cb9e050" style="width: 100.0%; height: 100.0%;"><p >Algunas plantas volcadas, caña fina, espigas chicas</p><p>Damage: 30</p><div style='display: flex;'><a href='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' target='_blank'><img src='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' target='_blank'><img src='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' target='_blank'><img src='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_92c8ae501a370a8a4125abec25e75c59.setContent(html_7169e5923263b84a3fbec0ac5cb9e050);
+            
+        
+
+        marker_85911f976542d17e920c27626e861188.bindPopup(popup_92c8ae501a370a8a4125abec25e75c59)
+        ;
+
+        
+    
+    
+            var marker_ca56e677087a92651be53cb3ba4dbbd3 = L.marker(
+                [-32.6089076, -62.7082831],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_487be27c644a82610e1602b5906207f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_ca56e677087a92651be53cb3ba4dbbd3.setIcon(icon_487be27c644a82610e1602b5906207f4);
+        
+    
+        var popup_254062bb99b21441407ac6429c70d7fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4ea3084a2b7abe129c8a801cb54dab32 = $(`<div id="html_4ea3084a2b7abe129c8a801cb54dab32" style="width: 100.0%; height: 100.0%;"><p >Daño casi total, sin espigas</p><p>Damage: 90</p><div style='display: flex;'><a href='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' target='_blank'><img src='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' target='_blank'><img src='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' target='_blank'><img src='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' target='_blank'><img src='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_254062bb99b21441407ac6429c70d7fe.setContent(html_4ea3084a2b7abe129c8a801cb54dab32);
+            
+        
+
+        marker_ca56e677087a92651be53cb3ba4dbbd3.bindPopup(popup_254062bb99b21441407ac6429c70d7fe)
+        ;
+
+        
+    
+    
+            var marker_2204a8c4c563e39cca85cd58237e254c = L.marker(
+                [-31.9664384, -62.8447313],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_ae233a95260d7c6b0bd7dfa11d906991 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_2204a8c4c563e39cca85cd58237e254c.setIcon(icon_ae233a95260d7c6b0bd7dfa11d906991);
+        
+    
+        var popup_1bccbd53d06405a8aeee5ddd8547673a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a696269b3a6fc7f3a20ba1271b6423d1 = $(`<div id="html_a696269b3a6fc7f3a20ba1271b6423d1" style="width: 100.0%; height: 100.0%;"><p >Desde afuera bien, en el centro muy afectado. Plantas de caña fina, hojas rojas, poco desarrollo de espiga</p><p>Damage: 55</p><div style='display: flex;'><a href='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' target='_blank'><img src='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' target='_blank'><img src='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' target='_blank'><img src='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' target='_blank'><img src='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' target='_blank'><img src='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_1bccbd53d06405a8aeee5ddd8547673a.setContent(html_a696269b3a6fc7f3a20ba1271b6423d1);
+            
+        
+
+        marker_2204a8c4c563e39cca85cd58237e254c.bindPopup(popup_1bccbd53d06405a8aeee5ddd8547673a)
+        ;
+
+        
+    
+    
+            var marker_1bd9e66a782e7e1f2f8f928af33f0748 = L.marker(
+                [-32.611749, -62.5328921],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_40e9c6c366b19057d998352c4640d26e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1bd9e66a782e7e1f2f8f928af33f0748.setIcon(icon_40e9c6c366b19057d998352c4640d26e);
+        
+    
+        var popup_222c39de3b6d9d5c687073958f63b837 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f517860757c2656e17d42982aa14ee1b = $(`<div id="html_f517860757c2656e17d42982aa14ee1b" style="width: 100.0%; height: 100.0%;"><p >Espigas chicas, finitas, buenas cantidad de granos</p><p>Damage: 10</p><div style='display: flex;'><a href='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' target='_blank'><img src='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' target='_blank'><img src='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_222c39de3b6d9d5c687073958f63b837.setContent(html_f517860757c2656e17d42982aa14ee1b);
+            
+        
+
+        marker_1bd9e66a782e7e1f2f8f928af33f0748.bindPopup(popup_222c39de3b6d9d5c687073958f63b837)
+        ;
+
+        
+    
+    
+            var marker_896cd66b504f9fddc4b10d17da91c0fd = L.marker(
+                [-31.4798539, -61.7652752],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_e2050bbe9f4ab5079c135df6d1c8b748 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_896cd66b504f9fddc4b10d17da91c0fd.setIcon(icon_e2050bbe9f4ab5079c135df6d1c8b748);
+        
+    
+        var popup_e7ec4b442e20209791c21d062cf59d90 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d357e1a9ec31eb5152736814200e7761 = $(`<div id="html_d357e1a9ec31eb5152736814200e7761" style="width: 100.0%; height: 100.0%;"><p >Hojas rojas, las basales con moho (negro), algunas plantas afectadas en su crecimiento, pero sin grandes daños en gral</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' target='_blank'><img src='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' target='_blank'><img src='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' target='_blank'><img src='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_e7ec4b442e20209791c21d062cf59d90.setContent(html_d357e1a9ec31eb5152736814200e7761);
+            
+        
+
+        marker_896cd66b504f9fddc4b10d17da91c0fd.bindPopup(popup_e7ec4b442e20209791c21d062cf59d90)
+        ;
+
+        
+    
+    
+            var marker_f5c87296c98e55d83aaf1a00d7bd8e47 = L.marker(
+                [-31.1363184, -61.4732649],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_3022d15604ffe5fe5beb54c151085ae5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f5c87296c98e55d83aaf1a00d7bd8e47.setIcon(icon_3022d15604ffe5fe5beb54c151085ae5);
+        
+    
+        var popup_7ea9f4924952a0d77e50014175b3374c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f7ddbe5d3955769d93412dfc2e4c83e = $(`<div id="html_4f7ddbe5d3955769d93412dfc2e4c83e" style="width: 100.0%; height: 100.0%;"><p >Lote completamente tumbado, espigas con muy poco desarrollo, hojas rojas, granos con pudrición y brotado</p><p>Damage: 75</p><div style='display: flex;'><a href='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' target='_blank'><img src='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' target='_blank'><img src='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' target='_blank'><img src='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' target='_blank'><img src='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_7ea9f4924952a0d77e50014175b3374c.setContent(html_4f7ddbe5d3955769d93412dfc2e4c83e);
+            
+        
+
+        marker_f5c87296c98e55d83aaf1a00d7bd8e47.bindPopup(popup_7ea9f4924952a0d77e50014175b3374c)
+        ;
+
+        
+    
+    
+            var marker_c03713a8eb5af8243d9d9d8d9d19609b = L.marker(
+                [-31.6574643, -63.2957087],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_2301d98451cd3c7bd6f263bfc4056006 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c03713a8eb5af8243d9d9d8d9d19609b.setIcon(icon_2301d98451cd3c7bd6f263bfc4056006);
+        
+    
+        var popup_c2cb60a85139ca6bc8e094ca541a36a1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_132724ae4713ee021ce500ad69c91edb = $(`<div id="html_132724ae4713ee021ce500ad69c91edb" style="width: 100.0%; height: 100.0%;"><p >Mucha chicarrita, poco daño</p><p>Damage: 5</p><div style='display: flex;'><a href='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' target='_blank'><img src='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' target='_blank'><img src='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_c2cb60a85139ca6bc8e094ca541a36a1.setContent(html_132724ae4713ee021ce500ad69c91edb);
+            
+        
+
+        marker_c03713a8eb5af8243d9d9d8d9d19609b.bindPopup(popup_c2cb60a85139ca6bc8e094ca541a36a1)
+        ;
+
+        
+    
+    
+            var marker_61d772ec216c0833eb14d7649cc16e68 = L.marker(
+                [-28.8268601, -62.3472244],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_800c2ebc7944a8a2e10c653cff842e82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_61d772ec216c0833eb14d7649cc16e68.setIcon(icon_800c2ebc7944a8a2e10c653cff842e82);
+        
+    
+        var popup_edf9faf19173083a59e685a450f3214e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6e0ef059af4eefcc6fbfe9511f294f5 = $(`<div id="html_a6e0ef059af4eefcc6fbfe9511f294f5" style="width: 100.0%; height: 100.0%;"><p >Mucha planta quebrada, hojas negras, algo verde aun. Espigas chica ybajo peso</p><p>Damage: 50</p><div style='display: flex;'><a href='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' target='_blank'><img src='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' target='_blank'><img src='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' target='_blank'><img src='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_edf9faf19173083a59e685a450f3214e.setContent(html_a6e0ef059af4eefcc6fbfe9511f294f5);
+            
+        
+
+        marker_61d772ec216c0833eb14d7649cc16e68.bindPopup(popup_edf9faf19173083a59e685a450f3214e)
+        ;
+
+        
+    
+    
+            var marker_d4ae64a821d3f717fcca760aebc94c57 = L.marker(
+                [-28.1986662, -62.7414252],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_818fdb09ffae322bd218ca5f28252045 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d4ae64a821d3f717fcca760aebc94c57.setIcon(icon_818fdb09ffae322bd218ca5f28252045);
+        
+    
+        var popup_706cd070cc0f36b0400a1b388d0798e3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_34172117150000395e4e0714c397b2af = $(`<div id="html_34172117150000395e4e0714c397b2af" style="width: 100.0%; height: 100.0%;"><p >Mucha planta tumbada, hojas negras y rojas, buen tamaño de planta. Espigas muy variadas de tamaño</p><p>Damage: 60</p><div style='display: flex;'><a href='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' target='_blank'><img src='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' target='_blank'><img src='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' target='_blank'><img src='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_706cd070cc0f36b0400a1b388d0798e3.setContent(html_34172117150000395e4e0714c397b2af);
+            
+        
+
+        marker_d4ae64a821d3f717fcca760aebc94c57.bindPopup(popup_706cd070cc0f36b0400a1b388d0798e3)
+        ;
+
+        
+    
+    
+            var marker_4c777e3e9ea886b8606c3decbaecd7eb = L.marker(
+                [-27.8162807, -62.5309443],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_ac8b33e31d44e21fa567ba11473417f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4c777e3e9ea886b8606c3decbaecd7eb.setIcon(icon_ac8b33e31d44e21fa567ba11473417f3);
+        
+    
+        var popup_e6c5577794f9d7c06b29819c7144fe7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c2a465386d97496f2d3878866a76b7a = $(`<div id="html_3c2a465386d97496f2d3878866a76b7a" style="width: 100.0%; height: 100.0%;"><p >Mucha presencia de chicharrita pero sin afectar el cultivo</p><p>Damage: 5</p><div style='display: flex;'><a href='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' target='_blank'><img src='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' target='_blank'><img src='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' target='_blank'><img src='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' target='_blank'><img src='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_e6c5577794f9d7c06b29819c7144fe7e.setContent(html_3c2a465386d97496f2d3878866a76b7a);
+            
+        
+
+        marker_4c777e3e9ea886b8606c3decbaecd7eb.bindPopup(popup_e6c5577794f9d7c06b29819c7144fe7e)
+        ;
+
+        
+    
+    
+            var marker_469f870e583aa95482cfacee3919bd1a = L.marker(
+                [-27.6344342, -62.289159],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_3c04120856ca786b593ec1464b834c48 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_469f870e583aa95482cfacee3919bd1a.setIcon(icon_3c04120856ca786b593ec1464b834c48);
+        
+    
+        var popup_c3be745dd4bcfe1432edfcedd7c5d465 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8967207523385afc0aba4f42cffecac8 = $(`<div id="html_8967207523385afc0aba4f42cffecac8" style="width: 100.0%; height: 100.0%;"><p >Mucha presencia de chicharrita, hojas basales negras poco impacto en el desarrollo de la planta. Buen porte espigas algo pequeñas. Sin plantas tumbadas ni quebradas</p><p>Damage: 15</p><div style='display: flex;'><a href='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' target='_blank'><img src='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' target='_blank'><img src='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' target='_blank'><img src='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' target='_blank'><img src='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_c3be745dd4bcfe1432edfcedd7c5d465.setContent(html_8967207523385afc0aba4f42cffecac8);
+            
+        
+
+        marker_469f870e583aa95482cfacee3919bd1a.bindPopup(popup_c3be745dd4bcfe1432edfcedd7c5d465)
+        ;
+
+        
+    
+    
+            var marker_3acafe97bcc3bb499a2d2a72f352e7a3 = L.marker(
+                [-28.7270177, -62.477126],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_d96ba370e6718c1b2a7575b5f170781f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_3acafe97bcc3bb499a2d2a72f352e7a3.setIcon(icon_d96ba370e6718c1b2a7575b5f170781f);
+        
+    
+        var popup_bdc4f6232931a86b7fcec8ffea479dd0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ab7b609c265f28fbc3e7176d43573f2 = $(`<div id="html_3ab7b609c265f28fbc3e7176d43573f2" style="width: 100.0%; height: 100.0%;"><p >Mucha presencia de chicharrita, hojas rojas y negras, sin embargo espigas bastante decente.</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' target='_blank'><img src='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' target='_blank'><img src='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' target='_blank'><img src='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_bdc4f6232931a86b7fcec8ffea479dd0.setContent(html_3ab7b609c265f28fbc3e7176d43573f2);
+            
+        
+
+        marker_3acafe97bcc3bb499a2d2a72f352e7a3.bindPopup(popup_bdc4f6232931a86b7fcec8ffea479dd0)
+        ;
+
+        
+    
+    
+            var marker_6821248485c0a08b338b01726c0afac3 = L.marker(
+                [-30.9132043, -61.5551688],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_11dba673139eac4798f050743cbb9edc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6821248485c0a08b338b01726c0afac3.setIcon(icon_11dba673139eac4798f050743cbb9edc);
+        
+    
+        var popup_1fa8e219a9432c6d4680cea084378da3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c47430560f250a482f5801018f7d3a48 = $(`<div id="html_c47430560f250a482f5801018f7d3a48" style="width: 100.0%; height: 100.0%;"><p >Muchas plantas quebradas, barrenador del tallo, espigas poco desarrollo</p><p>Damage: 60</p><div style='display: flex;'><a href='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' target='_blank'><img src='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' target='_blank'><img src='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' target='_blank'><img src='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_1fa8e219a9432c6d4680cea084378da3.setContent(html_c47430560f250a482f5801018f7d3a48);
+            
+        
+
+        marker_6821248485c0a08b338b01726c0afac3.bindPopup(popup_1fa8e219a9432c6d4680cea084378da3)
+        ;
+
+        
+    
+    
+            var marker_ed8b6ef8191b6474df391aa8a3acbe67 = L.marker(
+                [-28.9035524, -62.2808683],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_1401952e5b260e6338bd08af1bcc1a53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ed8b6ef8191b6474df391aa8a3acbe67.setIcon(icon_1401952e5b260e6338bd08af1bcc1a53);
+        
+    
+        var popup_862a9de256c58848b97757e8c106cb1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1be53c68d41f28809e4d8d6cd96d7304 = $(`<div id="html_1be53c68d41f28809e4d8d6cd96d7304" style="width: 100.0%; height: 100.0%;"><p >Muchas plantas quebradas, hojas negeas y rojas, espigas chicas y bajisimo peso de granos</p><p>Damage: 60</p><div style='display: flex;'><a href='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' target='_blank'><img src='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' target='_blank'><img src='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' target='_blank'><img src='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' target='_blank'><img src='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_862a9de256c58848b97757e8c106cb1d.setContent(html_1be53c68d41f28809e4d8d6cd96d7304);
+            
+        
+
+        marker_ed8b6ef8191b6474df391aa8a3acbe67.bindPopup(popup_862a9de256c58848b97757e8c106cb1d)
+        ;
+
+        
+    
+    
+            var marker_343f762173626779a64256dfcdb57510 = L.marker(
+                [-32.5703964, -62.8759664],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_fab4fa62499d843d75127c96de212405 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_343f762173626779a64256dfcdb57510.setIcon(icon_fab4fa62499d843d75127c96de212405);
+        
+    
+        var popup_24231ba84f9178258b2c248588d88a21 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_daf772bc37a6932765d2985c52e32bc3 = $(`<div id="html_daf772bc37a6932765d2985c52e32bc3" style="width: 100.0%; height: 100.0%;"><p >Muy tumbado, poco desarrollo de espigas</p><p>Damage: 70</p><div style='display: flex;'><a href='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' target='_blank'><img src='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' target='_blank'><img src='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' target='_blank'><img src='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_24231ba84f9178258b2c248588d88a21.setContent(html_daf772bc37a6932765d2985c52e32bc3);
+            
+        
+
+        marker_343f762173626779a64256dfcdb57510.bindPopup(popup_24231ba84f9178258b2c248588d88a21)
+        ;
+
+        
+    
+    
+            var marker_e3175ce2a0d372770632895efca1976f = L.marker(
+                [-30.6707731, -61.6299612],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_38c339ca33a0ccc76db5f4641506c498 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_e3175ce2a0d372770632895efca1976f.setIcon(icon_38c339ca33a0ccc76db5f4641506c498);
+        
+    
+        var popup_15ab0ef819c6a5ab65babc983ce95325 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8ec7668247619a23408d0e7c7ccaa1c8 = $(`<div id="html_8ec7668247619a23408d0e7c7ccaa1c8" style="width: 100.0%; height: 100.0%;"><p >No hay plantas caídas, si plantas de baja estatura, mucha hoja roja y poco desarrollo de espigas</p><p>Damage: 40</p><div style='display: flex;'><a href='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' target='_blank'><img src='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' target='_blank'><img src='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' target='_blank'><img src='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_15ab0ef819c6a5ab65babc983ce95325.setContent(html_8ec7668247619a23408d0e7c7ccaa1c8);
+            
+        
+
+        marker_e3175ce2a0d372770632895efca1976f.bindPopup(popup_15ab0ef819c6a5ab65babc983ce95325)
+        ;
+
+        
+    
+    
+            var marker_f8732595eff9754b32bc54f9e1abe176 = L.marker(
+                [-27.7815846, -61.0585478],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_83368f9531d43bbf9ca711410bbf3f4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_f8732595eff9754b32bc54f9e1abe176.setIcon(icon_83368f9531d43bbf9ca711410bbf3f4b);
+        
+    
+        var popup_09ec8ac11e242c4ac7bb60ea60891de5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43fcb1e8a99d2f92c43c7d92ddf1e259 = $(`<div id="html_43fcb1e8a99d2f92c43c7d92ddf1e259" style="width: 100.0%; height: 100.0%;"><p >No hay plantas tumbadas ni quebradas pero si muertas y secas. Plantas petizas. Espigas variadas algunas con mucho daño otras bien</p><p>Damage: 45</p><div style='display: flex;'><a href='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' target='_blank'><img src='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' target='_blank'><img src='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' target='_blank'><img src='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' target='_blank'><img src='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_09ec8ac11e242c4ac7bb60ea60891de5.setContent(html_43fcb1e8a99d2f92c43c7d92ddf1e259);
+            
+        
+
+        marker_f8732595eff9754b32bc54f9e1abe176.bindPopup(popup_09ec8ac11e242c4ac7bb60ea60891de5)
+        ;
+
+        
+    
+    
+            var marker_2e01e8853cce86d99f3e463534a73b6b = L.marker(
+                [-28.9698226, -62.156326],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_61af7254362396493e7adfce965414a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2e01e8853cce86d99f3e463534a73b6b.setIcon(icon_61af7254362396493e7adfce965414a2);
+        
+    
+        var popup_d1605adfcc71dd359be967ab56f7c05f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e011ed67a348e54f26cc0da3174e69a = $(`<div id="html_5e011ed67a348e54f26cc0da3174e69a" style="width: 100.0%; height: 100.0%;"><p >Plantas altas, con afectación pero sin vuelco, aun conservan el verde. Espigas chicas</p><p>Damage: 25</p><div style='display: flex;'><a href='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' target='_blank'><img src='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' target='_blank'><img src='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_d1605adfcc71dd359be967ab56f7c05f.setContent(html_5e011ed67a348e54f26cc0da3174e69a);
+            
+        
+
+        marker_2e01e8853cce86d99f3e463534a73b6b.bindPopup(popup_d1605adfcc71dd359be967ab56f7c05f)
+        ;
+
+        
+    
+    
+            var marker_af7fbfc594d552ba78d2b0d7af6280bc = L.marker(
+                [-27.6172571, -62.1418619],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_a0d8e036462a5c826147c475e98e6e76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_af7fbfc594d552ba78d2b0d7af6280bc.setIcon(icon_a0d8e036462a5c826147c475e98e6e76);
+        
+    
+        var popup_05df7633d8d0915960ce7febdf3f0783 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7afc58c4b89bdf084fd763fc453ac25b = $(`<div id="html_7afc58c4b89bdf084fd763fc453ac25b" style="width: 100.0%; height: 100.0%;"><p >Plantas de buen porte totalmente secas, hojas basales negras. En las espigas más afectadas muy bajo peso de grano. No había plantas tumbadas ni quebradas</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' target='_blank'><img src='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' target='_blank'><img src='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' target='_blank'><img src='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' target='_blank'><img src='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' target='_blank'><img src='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_05df7633d8d0915960ce7febdf3f0783.setContent(html_7afc58c4b89bdf084fd763fc453ac25b);
+            
+        
+
+        marker_af7fbfc594d552ba78d2b0d7af6280bc.bindPopup(popup_05df7633d8d0915960ce7febdf3f0783)
+        ;
+
+        
+    
+    
+            var marker_6ab3d8d1686e1955f681e6c87ff5e738 = L.marker(
+                [-29.010669, -62.088887],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_9d7199bc4d493f1c08e8589a5cae3579 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_6ab3d8d1686e1955f681e6c87ff5e738.setIcon(icon_9d7199bc4d493f1c08e8589a5cae3579);
+        
+    
+        var popup_8c8f7c538d56257ba7491cbf901863ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ebc755dd96c2d5bf55c6b008b737f610 = $(`<div id="html_ebc755dd96c2d5bf55c6b008b737f610" style="width: 100.0%; height: 100.0%;"><p >Plantas petizas, secas, hojas enegrecidas, rojas, espigas y granos muy pequeños. Mucha doble espiga</p><p>Damage: 55</p><div style='display: flex;'><a href='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' target='_blank'><img src='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' target='_blank'><img src='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' target='_blank'><img src='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_8c8f7c538d56257ba7491cbf901863ef.setContent(html_ebc755dd96c2d5bf55c6b008b737f610);
+            
+        
+
+        marker_6ab3d8d1686e1955f681e6c87ff5e738.bindPopup(popup_8c8f7c538d56257ba7491cbf901863ef)
+        ;
+
+        
+    
+    
+            var marker_e4323b59bdcb0b4d1554b571f682a87d = L.marker(
+                [-27.99595, -62.6304897],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_6e7cdf3c2d7c6be50062aa98d5210f8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e4323b59bdcb0b4d1554b571f682a87d.setIcon(icon_6e7cdf3c2d7c6be50062aa98d5210f8a);
+        
+    
+        var popup_088f91f5e6f5dfd3db3f6e1b38004407 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b529c8f5afed1f54c1eeb0554010f5e0 = $(`<div id="html_b529c8f5afed1f54c1eeb0554010f5e0" style="width: 100.0%; height: 100.0%;"><p >Plantas porte medio aún verdes sin quebrado ni tumbado. Mucha presencia de chicharrita y hojas basales negras. Espigas pequeñas</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' target='_blank'><img src='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' target='_blank'><img src='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' target='_blank'><img src='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' target='_blank'><img src='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_088f91f5e6f5dfd3db3f6e1b38004407.setContent(html_b529c8f5afed1f54c1eeb0554010f5e0);
+            
+        
+
+        marker_e4323b59bdcb0b4d1554b571f682a87d.bindPopup(popup_088f91f5e6f5dfd3db3f6e1b38004407)
+        ;
+
+        
+    
+    
+            var marker_eff7bf7eb5100aa8b88926627019e8db = L.marker(
+                [-30.0611855, -61.8125965],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_7c7876e6bd7da970e0f584979574a9f6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_eff7bf7eb5100aa8b88926627019e8db.setIcon(icon_7c7876e6bd7da970e0f584979574a9f6);
+        
+    
+        var popup_e0efd89e811156533903b52a19d967b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_36a4f676c3f9f7d3eb864fac378a0869 = $(`<div id="html_36a4f676c3f9f7d3eb864fac378a0869" style="width: 100.0%; height: 100.0%;"><p >Plantas quebradas, secas, espigas muy chicas y de muy bajo peso, talvez difícil a no se pierdan por cola de cosechadora</p><p>Damage: 45</p><div style='display: flex;'><a href='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' target='_blank'><img src='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' target='_blank'><img src='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' target='_blank'><img src='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' target='_blank'><img src='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_e0efd89e811156533903b52a19d967b1.setContent(html_36a4f676c3f9f7d3eb864fac378a0869);
+            
+        
+
+        marker_eff7bf7eb5100aa8b88926627019e8db.bindPopup(popup_e0efd89e811156533903b52a19d967b1)
+        ;
+
+        
+    
+    
+            var marker_1235789a0a44743b6b1065ecf6f12227 = L.marker(
+                [-31.4312162, -62.0121321],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_a05bc719df12dd7e59dcf5dfd38b022e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1235789a0a44743b6b1065ecf6f12227.setIcon(icon_a05bc719df12dd7e59dcf5dfd38b022e);
+        
+    
+        var popup_c068b44808b908f0ac15829fb56a65cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdbbb17a81baa2abef25068a107acfd8 = $(`<div id="html_bdbbb17a81baa2abef25068a107acfd8" style="width: 100.0%; height: 100.0%;"><p >Plantas tumbadas por rodales, alta incidencia en plantas afectadas, casi sin espigas, en el resto espigas con poco desarrolladas</p><p>Damage: 60</p><div style='display: flex;'><a href='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' target='_blank'><img src='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' target='_blank'><img src='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' target='_blank'><img src='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_c068b44808b908f0ac15829fb56a65cc.setContent(html_bdbbb17a81baa2abef25068a107acfd8);
+            
+        
+
+        marker_1235789a0a44743b6b1065ecf6f12227.bindPopup(popup_c068b44808b908f0ac15829fb56a65cc)
+        ;
+
+        
+    
+    
+            var marker_4c2b2a039a3eb9cbe67f46267928350b = L.marker(
+                [-32.4420078, -63.1661746],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_6ae1792d89192c04a5f3dd7e683639c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4c2b2a039a3eb9cbe67f46267928350b.setIcon(icon_6ae1792d89192c04a5f3dd7e683639c9);
+        
+    
+        var popup_368aa8b2ad31682d4a0d7e3b5e892965 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84f0c2d25b4ff71cd7428b3e474e9bf8 = $(`<div id="html_84f0c2d25b4ff71cd7428b3e474e9bf8" style="width: 100.0%; height: 100.0%;"><p >Pocos sintomas, espigas chicas para el porte de planta. Mucha poblacion de chicharrita</p><p>Damage: 10</p><div style='display: flex;'><a href='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' target='_blank'><img src='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' target='_blank'><img src='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' target='_blank'><img src='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_368aa8b2ad31682d4a0d7e3b5e892965.setContent(html_84f0c2d25b4ff71cd7428b3e474e9bf8);
+            
+        
+
+        marker_4c2b2a039a3eb9cbe67f46267928350b.bindPopup(popup_368aa8b2ad31682d4a0d7e3b5e892965)
+        ;
+
+        
+    
+    
+            var marker_fd8719398a49e2d6ce74006fcea5b565 = L.marker(
+                [-31.7008299, -62.9605804],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_216fa92011fdde7add965a39beb11b62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fd8719398a49e2d6ce74006fcea5b565.setIcon(icon_216fa92011fdde7add965a39beb11b62);
+        
+    
+        var popup_cdbad2859d28ee213a9412771d2bf06a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_34462a9415ce07e1de47bdb89568413b = $(`<div id="html_34462a9415ce07e1de47bdb89568413b" style="width: 100.0%; height: 100.0%;"><p >Sin daño significativo, espigas chicas</p><p>Damage: 5</p><div style='display: flex;'><a href='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' target='_blank'><img src='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' target='_blank'><img src='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' target='_blank'><img src='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_cdbad2859d28ee213a9412771d2bf06a.setContent(html_34462a9415ce07e1de47bdb89568413b);
+            
+        
+
+        marker_fd8719398a49e2d6ce74006fcea5b565.bindPopup(popup_cdbad2859d28ee213a9412771d2bf06a)
+        ;
+
+        
+    
+    
+            var marker_bab400c81ad8a407342213988361c5a9 = L.marker(
+                [-32.1534849, -63.1088386],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_e47c9d7db28967352c3f016ab63164ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bab400c81ad8a407342213988361c5a9.setIcon(icon_e47c9d7db28967352c3f016ab63164ad);
+        
+    
+        var popup_fa847c967104e906c54242f9a827d1bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e3d2a3204312477ba20be9944861bea = $(`<div id="html_8e3d2a3204312477ba20be9944861bea" style="width: 100.0%; height: 100.0%;"><p >Sin daños, espiga normal, caña algo finita</p><p>Damage: 0</p><div style='display: flex;'><a href='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' target='_blank'><img src='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' target='_blank'><img src='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_fa847c967104e906c54242f9a827d1bc.setContent(html_8e3d2a3204312477ba20be9944861bea);
+            
+        
+
+        marker_bab400c81ad8a407342213988361c5a9.bindPopup(popup_fa847c967104e906c54242f9a827d1bc)
+        ;
+
+        
+    
+    
+            var marker_dbdcdf710b1d6008ae9ca12b9c07b9db = L.marker(
+                [-32.3482139, -63.2305733],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_a8535ee2f52c0becd6a94da33587e8f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dbdcdf710b1d6008ae9ca12b9c07b9db.setIcon(icon_a8535ee2f52c0becd6a94da33587e8f4);
+        
+    
+        var popup_42af41016bf6e50b13be848b60307f2e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a73f55cca9634d31d1113dd3e8d1567 = $(`<div id="html_0a73f55cca9634d31d1113dd3e8d1567" style="width: 100.0%; height: 100.0%;"><p >Sin daños, hay presencia de chicharrita</p><p>Damage: 0</p><div style='display: flex;'><a href='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' target='_blank'><img src='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' target='_blank'><img src='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_42af41016bf6e50b13be848b60307f2e.setContent(html_0a73f55cca9634d31d1113dd3e8d1567);
+            
+        
+
+        marker_dbdcdf710b1d6008ae9ca12b9c07b9db.bindPopup(popup_42af41016bf6e50b13be848b60307f2e)
+        ;
+
+        
+    
+    
+            var marker_a0fe12e119156a0854d36102d4419d09 = L.marker(
+                [-27.4802015, -60.9901824],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_0a6e9c3d11c5d4f609f4ff5890f34331 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a0fe12e119156a0854d36102d4419d09.setIcon(icon_0a6e9c3d11c5d4f609f4ff5890f34331);
+        
+    
+        var popup_03d35bc15eeb8530d6e05f1927a3ee11 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1ea4dd775cf11c9a9494629f9fd5758 = $(`<div id="html_f1ea4dd775cf11c9a9494629f9fd5758" style="width: 100.0%; height: 100.0%;"><p >Sin plantas tumbadas ni quebradas algunas con síntomas. Porte mediano. Espigas muy dañadas en plantas afectadas</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' target='_blank'><img src='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' target='_blank'><img src='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' target='_blank'><img src='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' target='_blank'><img src='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_03d35bc15eeb8530d6e05f1927a3ee11.setContent(html_f1ea4dd775cf11c9a9494629f9fd5758);
+            
+        
+
+        marker_a0fe12e119156a0854d36102d4419d09.bindPopup(popup_03d35bc15eeb8530d6e05f1927a3ee11)
+        ;
+
+        
+    
+    
+            var marker_5464d88a63e6562acde718cd973b5912 = L.marker(
+                [-27.4297105, -61.1241039],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_9f8ba25fe69b481185e12bf2fa1cb16f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_5464d88a63e6562acde718cd973b5912.setIcon(icon_9f8ba25fe69b481185e12bf2fa1cb16f);
+        
+    
+        var popup_19f7c6106b1f2fe54a38f06c87792565 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e53cfd7a0da6265eab642ce39c586882 = $(`<div id="html_e53cfd7a0da6265eab642ce39c586882" style="width: 100.0%; height: 100.0%;"><p >Sin plantas tumbadas ni quebradas, flojo de caña, muchas plantas afectadas, cultivo mayormente verde</p><p>Damage: 55</p><div style='display: flex;'><a href='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' target='_blank'><img src='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' target='_blank'><img src='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' target='_blank'><img src='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' target='_blank'><img src='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_19f7c6106b1f2fe54a38f06c87792565.setContent(html_e53cfd7a0da6265eab642ce39c586882);
+            
+        
+
+        marker_5464d88a63e6562acde718cd973b5912.bindPopup(popup_19f7c6106b1f2fe54a38f06c87792565)
+        ;
+
+        
+    
+    
+            var marker_5facbc1e1a963a352217fb093c0f1450 = L.marker(
+                [-27.5089053, -60.877294],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_0ba22587760c3c41622960f526821b29 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5facbc1e1a963a352217fb093c0f1450.setIcon(icon_0ba22587760c3c41622960f526821b29);
+        
+    
+        var popup_086df52774510c63d1fa4338517bd9b2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a36666b1f3a3dcc20fdb06963a0c8df0 = $(`<div id="html_a36666b1f3a3dcc20fdb06963a0c8df0" style="width: 100.0%; height: 100.0%;"><p >Sin plantas tumbadas ni quebradas. Buen porte de plantas, síntomas leves pero con espigas afectadas. Plantas verdes todavía con algunas hojas amarillas o negras</p><p>Damage: 35</p><div style='display: flex;'><a href='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' target='_blank'><img src='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' target='_blank'><img src='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' target='_blank'><img src='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' target='_blank'><img src='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' target='_blank'><img src='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_086df52774510c63d1fa4338517bd9b2.setContent(html_a36666b1f3a3dcc20fdb06963a0c8df0);
+            
+        
+
+        marker_5facbc1e1a963a352217fb093c0f1450.bindPopup(popup_086df52774510c63d1fa4338517bd9b2)
+        ;
+
+        
+    
+    
+            var marker_899a45a4867e6259ed5776fc77401dbd = L.marker(
+                [-32.5703721, -62.8760977],
+                {}
+            ).addTo(map_06be8438c45fbb1c3116c0e3ef75f3f8);
+        
+    
+            var icon_db52499d5563a11ccf9b1f6bdb61e6f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_899a45a4867e6259ed5776fc77401dbd.setIcon(icon_db52499d5563a11ccf9b1f6bdb61e6f3);
+        
+    
+        var popup_f646810fa2328327fa7d68c741fae835 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_203b2d82c0a5660c3edf42399edfb538 = $(`<div id="html_203b2d82c0a5660c3edf42399edfb538" style="width: 100.0%; height: 100.0%;"><p >Sintomas pero sin grandes daños, plantas secas otras no. Espigas chicas</p><p>Damage: 20</p><div style='display: flex;'><a href='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' target='_blank'><img src='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' target='_blank'><img src='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' target='_blank'><img src='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_f646810fa2328327fa7d68c741fae835.setContent(html_203b2d82c0a5660c3edf42399edfb538);
+            
+        
+
+        marker_899a45a4867e6259ed5776fc77401dbd.bindPopup(popup_f646810fa2328327fa7d68c741fae835)
+        ;
+
+        
+    
+</script>
+</html>
