@@ -983,23 +983,44 @@
 
         marker_4edae3cfb0048a67edfc06f5fc75a4b4.bindPopup(popup_4bccf505d69026d055546d87205c6caa)
         ;
+// URL del archivo GeoTIFF
 var url_to_geotiff_file = './maiz22_low.tif';
 
-// Crear una función para cargar el raster
-function loadRaster(url) {
-  // Crear una nueva instancia de RasterLayer
-  var rasterLayer = L.geotiffLayer(url).addTo(map);
+// Fetch del archivo GeoTIFF
+fetch(url_to_geotiff_file)
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => {
+    // Parseo del archivo GeoTIFF
+    parse_georaster(arrayBuffer).then(georaster => {
+      // Creación de la capa de GeoRaster
+      var layer = new GeoRasterLayer({
+        georaster: georaster,
+        opacity: 0.9,
+        pixelValuesToColorFn: function(pixelValues) {
+          var pixelValue = pixelValues[0]; // Existe solo una banda en este raster
 
-  // Obtener los límites del raster y ajustar el mapa a ellos
-  rasterLayer.getBounds().then(function(bounds) {
-    map.fitBounds(bounds);
-  }).catch(function(error) {
-    console.error('Error al obtener los límites del raster:', error);
+          if (isNaN(pixelValue)) return null;
+          // Escalar a 0 - 1 utilizado por chroma
+          var scaledPixelValue = (pixelValue - (-15)) / 30;
+
+          // Lógica para determinar el color según el valor del píxel
+          var color = getColorFromValue(pixelValue);
+
+          return color;
+        }
+      });
+
+      // Agregar la capa al mapa
+      layer.addTo(map);
+
+      // Ajustar el mapa a los límites del raster
+      map.fitBounds(layer.getBounds());
+    });
+  })
+  .catch(error => {
+    console.error("Error al cargar el archivo GeoTIFF:", error);
   });
-}
 
-// Llamar a la función para cargar el raster
-loadRaster(url_to_geotiff_file);
                 
           
 </script>
