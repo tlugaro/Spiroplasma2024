@@ -983,38 +983,23 @@
 
         marker_4edae3cfb0048a67edfc06f5fc75a4b4.bindPopup(popup_4bccf505d69026d055546d87205c6caa)
         ;
+var url_to_geotiff_file = './maiz22_low.tif';
 
-        var url_to_geotiff_file=  './maiz22_low.tif';
+// Crear una función para cargar el raster
+function loadRaster(url) {
+  // Crear una nueva instancia de RasterLayer
+  var rasterLayer = L.geotiffLayer(url).addTo(map);
 
-fetch(url_to_geotiff_file)
-  .then(response => response.arrayBuffer())
-  .then(arrayBuffer => {
-    parse_georaster(arrayBuffer).then(georaster => {
-      console.log("georaster:", georaster);
-
-      /*
-          GeoRasterLayer is an extension of GridLayer,
-          which means can use GridLayer options like opacity.
-
-          Just make sure to include the georaster option!
-
-          Optionally set the pixelValuesToColorFn function option to customize
-          how values for a pixel are translated to a color.
-
-          https://leafletjs.com/reference.html#gridlayer
-      */
-      var layer = new GeoRasterLayer({
-          georaster: georaster,
-          opacity: 0.7,
-          pixelValuesToColorFn: values => values[0] === 42 ? '#ffffff' : '#000000',
-          resolution: 64 // optional parameter for adjusting display resolution
-      });
-      layer.addTo(map_2325012c8fdfb533cb67d1a382b093a5);
-
-      map.fitBounds(layer.getBounds());
-
+  // Obtener los límites del raster y ajustar el mapa a ellos
+  rasterLayer.getBounds().then(function(bounds) {
+    map.fitBounds(bounds);
+  }).catch(function(error) {
+    console.error('Error al obtener los límites del raster:', error);
   });
-});
+}
+
+// Llamar a la función para cargar el raster
+loadRaster(url_to_geotiff_file);
                 
           
 </script>
