@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
+    <script src="https://unpkg.com/georaster-layer-for-leaflet/dist/georaster-layer-for-leaflet.min.js"></script>
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_155d7a670720e123eddcdd2b5ac75959 {
+                #map_2325012c8fdfb533cb67d1a382b093a5 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -65,26 +65,15 @@
          </div>
       </div>
      
-    <script>
-var map = L.map('{mapa.get_root().get_name()}');
-
-var georasterLayer = new GeoRasterLayer({
-    georaster: "maiz_22.tif",
-    resolution: 256,  
-    opacity: 0.9    
-});
-
-georasterLayer.addTo(map);
-</script>
     
-            <div class="folium-map" id="map_155d7a670720e123eddcdd2b5ac75959" ></div>
+            <div class="folium-map" id="map_2325012c8fdfb533cb67d1a382b093a5" ></div>
         
 </body>
 <script>
     
     
-            var map_155d7a670720e123eddcdd2b5ac75959 = L.map(
-                "map_155d7a670720e123eddcdd2b5ac75959",
+            var map_2325012c8fdfb533cb67d1a382b093a5 = L.map(
+                "map_2325012c8fdfb533cb67d1a382b093a5",
                 {
                     center: [-30.099312366666666, -62.250406030303026],
                     crs: L.CRS.EPSG3857,
@@ -98,904 +87,935 @@ georasterLayer.addTo(map);
 
         
     
-            var tile_layer_3dd30012d673328705cf1e287e97126c = L.tileLayer(
+            var tile_layer_2c4fe02845d00887f4b301e68fb526f0 = L.tileLayer(
                 "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png",
                 {"attribution": "IGN Argentina", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 5, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_3dd30012d673328705cf1e287e97126c.addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            tile_layer_2c4fe02845d00887f4b301e68fb526f0.addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var marker_4f6ab70da3841fb29b63ba9e1c0890d3 = L.marker(
+            var marker_f1d089c76b1e6d2e1620219bb7a69c2b = L.marker(
                 [-31.7941708, -62.6091979],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_4ea5332d085f2f4607d4b966ee2bbd93 = L.AwesomeMarkers.icon(
+            var icon_98dabb7c853190d00e92488a6db5db1e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_4f6ab70da3841fb29b63ba9e1c0890d3.setIcon(icon_4ea5332d085f2f4607d4b966ee2bbd93);
+            marker_f1d089c76b1e6d2e1620219bb7a69c2b.setIcon(icon_98dabb7c853190d00e92488a6db5db1e);
         
     
-        var popup_e9bb1528e0c6b321ddd690d552d91b36 = L.popup({"maxWidth": "100%"});
+        var popup_1f6db5f2e7d52130593a9b55339cff73 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_4d8a8268228eb52cbc74298b74d980e8 = $(`<div id="html_4d8a8268228eb52cbc74298b74d980e8" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Some leaning plants</p><p style="font-size: 16px;line-height: 0.2">Low level of infection</p><p style="font-size: 16px;line-height: 0.2">Medium size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' target='_blank'><img src='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' target='_blank'><img src='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_e9bb1528e0c6b321ddd690d552d91b36.setContent(html_4d8a8268228eb52cbc74298b74d980e8);
+                var html_987d6b127d8bc2776c91b71436bf681e = $(`<div id="html_987d6b127d8bc2776c91b71436bf681e" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Some leaning plants</p><p style="font-size: 12;line-height: 0.2">Low level of infection</p><p style="font-size: 12;line-height: 0.2">Medium size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' target='_blank'><img src='./photos/c83e9fd5-f554-42dc-854e-5e01106862c3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' target='_blank'><img src='./photos/c4cf4062-025b-4f78-90fc-f9631e1bd598.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_1f6db5f2e7d52130593a9b55339cff73.setContent(html_987d6b127d8bc2776c91b71436bf681e);
             
         
 
-        marker_4f6ab70da3841fb29b63ba9e1c0890d3.bindPopup(popup_e9bb1528e0c6b321ddd690d552d91b36)
+        marker_f1d089c76b1e6d2e1620219bb7a69c2b.bindPopup(popup_1f6db5f2e7d52130593a9b55339cff73)
         ;
 
         
     
     
-            var marker_9353c21d2578c593174c838efaf62168 = L.marker(
+            var marker_0db6423e8056e279a923830f0eaee0e8 = L.marker(
                 [-31.8216946, -62.7629656],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_60bd8d6dc90f7d73ed21b4afe35087dc = L.AwesomeMarkers.icon(
+            var icon_dbf0e1ae9dac70776c4a22d3c13d3b55 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_9353c21d2578c593174c838efaf62168.setIcon(icon_60bd8d6dc90f7d73ed21b4afe35087dc);
+            marker_0db6423e8056e279a923830f0eaee0e8.setIcon(icon_dbf0e1ae9dac70776c4a22d3c13d3b55);
         
     
-        var popup_f292e37621e7495b0577055d9b65fc33 = L.popup({"maxWidth": "100%"});
+        var popup_0ec9273fbeae3650e2c17c98bd126454 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_1fd37eb8f6e418b474609010d8e43fd5 = $(`<div id="html_1fd37eb8f6e418b474609010d8e43fd5" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Some leaning plants</p><p style="font-size: 16px;line-height: 0.2">Weak stalks</p><p style="font-size: 16px;line-height: 0.2">Small size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 30</p><div style='display: flex;'><a href='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' target='_blank'><img src='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' target='_blank'><img src='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' target='_blank'><img src='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_f292e37621e7495b0577055d9b65fc33.setContent(html_1fd37eb8f6e418b474609010d8e43fd5);
+                var html_488d50e2fbdcd54b464e229d2a9a6c36 = $(`<div id="html_488d50e2fbdcd54b464e229d2a9a6c36" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Some leaning plants</p><p style="font-size: 12;line-height: 0.2">Weak stalks</p><p style="font-size: 12;line-height: 0.2">Small size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 30</p><div style='display: flex;'><a href='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' target='_blank'><img src='./photos/dc5e2ff6-9295-44a3-9fab-bb5a1a782902.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' target='_blank'><img src='./photos/ae0ee09d-c5e8-47a3-a758-c7c95e3b0b04.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' target='_blank'><img src='./photos/3c83bf1f-c514-45ba-b071-5c2311744240.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_0ec9273fbeae3650e2c17c98bd126454.setContent(html_488d50e2fbdcd54b464e229d2a9a6c36);
             
         
 
-        marker_9353c21d2578c593174c838efaf62168.bindPopup(popup_f292e37621e7495b0577055d9b65fc33)
+        marker_0db6423e8056e279a923830f0eaee0e8.bindPopup(popup_0ec9273fbeae3650e2c17c98bd126454)
         ;
 
         
     
     
-            var marker_1ece4d0db8e47876d95cda7d87f8fe13 = L.marker(
+            var marker_d40af563f8af95db61c05f3eaeb18e88 = L.marker(
                 [-32.6089076, -62.7082831],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_355be27c4cd82fc061078179070499a2 = L.AwesomeMarkers.icon(
+            var icon_1ee62a3b2f027500dfd734a6801e53cf = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
             );
-            marker_1ece4d0db8e47876d95cda7d87f8fe13.setIcon(icon_355be27c4cd82fc061078179070499a2);
+            marker_d40af563f8af95db61c05f3eaeb18e88.setIcon(icon_1ee62a3b2f027500dfd734a6801e53cf);
         
     
-        var popup_0b3b418c843c736994d0ebd3e73dd79d = L.popup({"maxWidth": "100%"});
+        var popup_fb31d9d1c588d3231f72d4adb63287de = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_343cd4cfdcb298582e7d1e90a4e362fd = $(`<div id="html_343cd4cfdcb298582e7d1e90a4e362fd" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Total damage</p><p style="font-size: 16px;line-height: 0.2">No ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 90</p><div style='display: flex;'><a href='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' target='_blank'><img src='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' target='_blank'><img src='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' target='_blank'><img src='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' target='_blank'><img src='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_0b3b418c843c736994d0ebd3e73dd79d.setContent(html_343cd4cfdcb298582e7d1e90a4e362fd);
+                var html_9786d7179ee064025f534e45b1f514c9 = $(`<div id="html_9786d7179ee064025f534e45b1f514c9" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Total damage</p><p style="font-size: 12;line-height: 0.2">No ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 90</p><div style='display: flex;'><a href='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' target='_blank'><img src='./photos/a9d6da14-24a7-4990-9f79-30116dcbb5e1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' target='_blank'><img src='./photos/55c0ef81-2717-4774-a10e-d922b89555b9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' target='_blank'><img src='./photos/b37bf7d1-56c8-4f95-b9f2-5f855ab1928f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' target='_blank'><img src='./photos/9356fb7a-0695-4250-aee6-e7e4ceff5eb2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_fb31d9d1c588d3231f72d4adb63287de.setContent(html_9786d7179ee064025f534e45b1f514c9);
             
         
 
-        marker_1ece4d0db8e47876d95cda7d87f8fe13.bindPopup(popup_0b3b418c843c736994d0ebd3e73dd79d)
+        marker_d40af563f8af95db61c05f3eaeb18e88.bindPopup(popup_fb31d9d1c588d3231f72d4adb63287de)
         ;
 
         
     
     
-            var marker_0b3a850a02e45317be1b134125a6d632 = L.marker(
+            var marker_fa4cb99e1dcfac5e6d979bd1c5ec8f25 = L.marker(
                 [-31.9664384, -62.8447313],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_7d5b8dd61f5cfc9efdcb7949ec7ad038 = L.AwesomeMarkers.icon(
+            var icon_e5b3211a39741b402cd1f8c3c20e1615 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_0b3a850a02e45317be1b134125a6d632.setIcon(icon_7d5b8dd61f5cfc9efdcb7949ec7ad038);
+            marker_fa4cb99e1dcfac5e6d979bd1c5ec8f25.setIcon(icon_e5b3211a39741b402cd1f8c3c20e1615);
         
     
-        var popup_69494d9525d8c0cb5619fb26d9a6be49 = L.popup({"maxWidth": "100%"});
+        var popup_88a16c8e0b73d1827fd0519517424fdb = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_6b7db215e6c2d3abe990d6340d399b13 = $(`<div id="html_6b7db215e6c2d3abe990d6340d399b13" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style="font-size: 16px;line-height: 0.2">Weak starls</p><p style="font-size: 16px;line-height: 0.2">Small size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' target='_blank'><img src='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' target='_blank'><img src='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' target='_blank'><img src='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' target='_blank'><img src='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' target='_blank'><img src='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_69494d9525d8c0cb5619fb26d9a6be49.setContent(html_6b7db215e6c2d3abe990d6340d399b13);
+                var html_642aabbbebf2946e0b10c6889ba236ad = $(`<div id="html_642aabbbebf2946e0b10c6889ba236ad" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style="font-size: 12;line-height: 0.2">Weak starls</p><p style="font-size: 12;line-height: 0.2">Small size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' target='_blank'><img src='./photos/910dc437-81aa-41ab-9712-2f565119bd6f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' target='_blank'><img src='./photos/385e58df-ec31-4ab9-b758-c301d6d3d079.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' target='_blank'><img src='./photos/18342f21-b9a9-4409-8733-3789c3933795.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' target='_blank'><img src='./photos/4b8a7ffb-ea09-4111-a7c4-f6cf9e488971.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' target='_blank'><img src='./photos/9dc53097-18f7-4e32-981c-6b1e054af89f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_88a16c8e0b73d1827fd0519517424fdb.setContent(html_642aabbbebf2946e0b10c6889ba236ad);
             
         
 
-        marker_0b3a850a02e45317be1b134125a6d632.bindPopup(popup_69494d9525d8c0cb5619fb26d9a6be49)
+        marker_fa4cb99e1dcfac5e6d979bd1c5ec8f25.bindPopup(popup_88a16c8e0b73d1827fd0519517424fdb)
         ;
 
         
     
     
-            var marker_fd16eb377fb268e47dc39d18ed6e6f87 = L.marker(
+            var marker_1e2e363898a77b412c191fd631213175 = L.marker(
                 [-32.611749, -62.5328921],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_f5f465f699717edfb3e0a53748689c89 = L.AwesomeMarkers.icon(
+            var icon_d8c54d87e6068268e5071911cad6aadf = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_fd16eb377fb268e47dc39d18ed6e6f87.setIcon(icon_f5f465f699717edfb3e0a53748689c89);
+            marker_1e2e363898a77b412c191fd631213175.setIcon(icon_d8c54d87e6068268e5071911cad6aadf);
         
     
-        var popup_d4ee00413fb7f322437ea314e22861c6 = L.popup({"maxWidth": "100%"});
+        var popup_f9897136bd53078268f87a1d0245beeb = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_5d4dc5f14b14e49153fa20d6ddcaca7a = $(`<div id="html_5d4dc5f14b14e49153fa20d6ddcaca7a" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Small size ears</p><p style="font-size: 16px;line-height: 0.2">Weak stalks</p><p style="font-size: 16px;line-height: 0.2">Decent grains count</p><p style='font-size: 16px;line-height: 0.2'>Damage: 10</p><div style='display: flex;'><a href='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' target='_blank'><img src='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' target='_blank'><img src='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_d4ee00413fb7f322437ea314e22861c6.setContent(html_5d4dc5f14b14e49153fa20d6ddcaca7a);
+                var html_d8cf25f52dd0e54d2a51565556d89ad6 = $(`<div id="html_d8cf25f52dd0e54d2a51565556d89ad6" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Small size ears</p><p style="font-size: 12;line-height: 0.2">Weak stalks</p><p style="font-size: 12;line-height: 0.2">Decent grains count</p><p style='font-size: 12px;line-height: 0.2'>Damage: 10</p><div style='display: flex;'><a href='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' target='_blank'><img src='./photos/0fed9a17-9e3f-4717-a4dc-96d320486711.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' target='_blank'><img src='./photos/41ff6bfa-f802-414c-bcb9-13b4cc6f9c63.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_f9897136bd53078268f87a1d0245beeb.setContent(html_d8cf25f52dd0e54d2a51565556d89ad6);
             
         
 
-        marker_fd16eb377fb268e47dc39d18ed6e6f87.bindPopup(popup_d4ee00413fb7f322437ea314e22861c6)
+        marker_1e2e363898a77b412c191fd631213175.bindPopup(popup_f9897136bd53078268f87a1d0245beeb)
         ;
 
         
     
     
-            var marker_256bddef1afccef374cbcdfa001dbc4c = L.marker(
+            var marker_030369a68eb92096751d46ef8c78c28d = L.marker(
                 [-31.6574643, -63.2957087],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_0f05140228c3687f2c6d484343d314f5 = L.AwesomeMarkers.icon(
+            var icon_68534c99714c828f5a38ca3c91bf25a7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_256bddef1afccef374cbcdfa001dbc4c.setIcon(icon_0f05140228c3687f2c6d484343d314f5);
+            marker_030369a68eb92096751d46ef8c78c28d.setIcon(icon_68534c99714c828f5a38ca3c91bf25a7);
         
     
-        var popup_96ebe323d2894d8e707fa2669132260f = L.popup({"maxWidth": "100%"});
+        var popup_a339e8d7531e0ad97c2f03b4f93d928f = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_c11107f0ebeab5659ef8aa4a1d24da77 = $(`<div id="html_c11107f0ebeab5659ef8aa4a1d24da77" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Low level of infection</p><p style="font-size: 16px;line-height: 0.2">High insect population</p><p style='font-size: 16px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' target='_blank'><img src='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' target='_blank'><img src='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_96ebe323d2894d8e707fa2669132260f.setContent(html_c11107f0ebeab5659ef8aa4a1d24da77);
+                var html_ad9f60fc8bceafac5aad4a4590f5f3eb = $(`<div id="html_ad9f60fc8bceafac5aad4a4590f5f3eb" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Low level of infection</p><p style="font-size: 12;line-height: 0.2">High insect population</p><p style='font-size: 12px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' target='_blank'><img src='./photos/4429948a-5af5-48a5-ae0d-120a50dda886.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' target='_blank'><img src='./photos/d05555c9-1c4b-4896-9037-bcb5c8ae6cc9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_a339e8d7531e0ad97c2f03b4f93d928f.setContent(html_ad9f60fc8bceafac5aad4a4590f5f3eb);
             
         
 
-        marker_256bddef1afccef374cbcdfa001dbc4c.bindPopup(popup_96ebe323d2894d8e707fa2669132260f)
+        marker_030369a68eb92096751d46ef8c78c28d.bindPopup(popup_a339e8d7531e0ad97c2f03b4f93d928f)
         ;
 
         
     
     
-            var marker_9a480ce172ec9392864c98cc0fde8e3e = L.marker(
+            var marker_232ed9ed0a1441e1d8ccb768fbc22149 = L.marker(
                 [-32.5703964, -62.8759664],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_f0b10b44f25ec4ae553fa9c080cc8de6 = L.AwesomeMarkers.icon(
+            var icon_28982d57f770b49aa11e57f2c026f265 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_9a480ce172ec9392864c98cc0fde8e3e.setIcon(icon_f0b10b44f25ec4ae553fa9c080cc8de6);
+            marker_232ed9ed0a1441e1d8ccb768fbc22149.setIcon(icon_28982d57f770b49aa11e57f2c026f265);
         
     
-        var popup_cdd458c9cdbdb6ebfe1764a89dfd7849 = L.popup({"maxWidth": "100%"});
+        var popup_7ae05192a93a78675327ddb86d51025b = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_34d60fc087a029548a7d8c00ba1ed6e0 = $(`<div id="html_34d60fc087a029548a7d8c00ba1ed6e0" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of leaning plants</p><p style="font-size: 16px;line-height: 0.2">Poor ear development</p><p style='font-size: 16px;line-height: 0.2'>Damage: 70</p><div style='display: flex;'><a href='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' target='_blank'><img src='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' target='_blank'><img src='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' target='_blank'><img src='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_cdd458c9cdbdb6ebfe1764a89dfd7849.setContent(html_34d60fc087a029548a7d8c00ba1ed6e0);
+                var html_48b6299d13a85f9136a8390806030036 = $(`<div id="html_48b6299d13a85f9136a8390806030036" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of leaning plants</p><p style="font-size: 12;line-height: 0.2">Poor ear development</p><p style='font-size: 12px;line-height: 0.2'>Damage: 70</p><div style='display: flex;'><a href='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' target='_blank'><img src='./photos/ae01f9e9-58a6-4bc5-a3cc-09d45e21615f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' target='_blank'><img src='./photos/b0d6e299-f879-4420-ab1e-519c9587746d.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' target='_blank'><img src='./photos/8ab91cdd-a428-4a37-80c6-76c1f0c22aa3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_7ae05192a93a78675327ddb86d51025b.setContent(html_48b6299d13a85f9136a8390806030036);
             
         
 
-        marker_9a480ce172ec9392864c98cc0fde8e3e.bindPopup(popup_cdd458c9cdbdb6ebfe1764a89dfd7849)
+        marker_232ed9ed0a1441e1d8ccb768fbc22149.bindPopup(popup_7ae05192a93a78675327ddb86d51025b)
         ;
 
         
     
     
-            var marker_a9bf0c57d2e8f7af756702682f968448 = L.marker(
+            var marker_54c90ce5d265f0e3b2536fc6e589dbaf = L.marker(
                 [-32.4420078, -63.1661746],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_555e300e20e8b15b2ede220c904677b0 = L.AwesomeMarkers.icon(
+            var icon_fc95a0b79c24174b62296ff61cc3a85f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_a9bf0c57d2e8f7af756702682f968448.setIcon(icon_555e300e20e8b15b2ede220c904677b0);
+            marker_54c90ce5d265f0e3b2536fc6e589dbaf.setIcon(icon_fc95a0b79c24174b62296ff61cc3a85f);
         
     
-        var popup_9ad79b300cfa5c344add4e8277143fd5 = L.popup({"maxWidth": "100%"});
+        var popup_51f0d02899c2a6ad5f5746e813442e28 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_0a7fe2aff94c14055e16e11116c8a494 = $(`<div id="html_0a7fe2aff94c14055e16e11116c8a494" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Very low level of infection</p><p style="font-size: 16px;line-height: 0.2">Small-medium size ears</p><p style="font-size: 16px;line-height: 0.2">High insect population</p><p style='font-size: 16px;line-height: 0.2'>Damage: 10</p><div style='display: flex;'><a href='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' target='_blank'><img src='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' target='_blank'><img src='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' target='_blank'><img src='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_9ad79b300cfa5c344add4e8277143fd5.setContent(html_0a7fe2aff94c14055e16e11116c8a494);
+                var html_f40610afb5a9846206d6dbf727a2960c = $(`<div id="html_f40610afb5a9846206d6dbf727a2960c" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Very low level of infection</p><p style="font-size: 12;line-height: 0.2">Small-medium size ears</p><p style="font-size: 12;line-height: 0.2">High insect population</p><p style='font-size: 12px;line-height: 0.2'>Damage: 10</p><div style='display: flex;'><a href='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' target='_blank'><img src='./photos/51dadc78-0245-4aa1-a87e-bb26aa380320.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' target='_blank'><img src='./photos/20833688-211a-4bec-9b5f-14161284e2ec.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' target='_blank'><img src='./photos/85ca1ac4-c22d-43e0-aed4-77a254f54194.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_51f0d02899c2a6ad5f5746e813442e28.setContent(html_f40610afb5a9846206d6dbf727a2960c);
             
         
 
-        marker_a9bf0c57d2e8f7af756702682f968448.bindPopup(popup_9ad79b300cfa5c344add4e8277143fd5)
+        marker_54c90ce5d265f0e3b2536fc6e589dbaf.bindPopup(popup_51f0d02899c2a6ad5f5746e813442e28)
         ;
 
         
     
     
-            var marker_c6a2f570b24adf6309b9d0943bad7a17 = L.marker(
+            var marker_a15ac9d97395eecc01bbf81e31e0e437 = L.marker(
                 [-31.7008299, -62.9605804],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_7ad03752791ff9bda6d250e0c5bf1103 = L.AwesomeMarkers.icon(
+            var icon_9b6fcfb24848530d5f3a84f66dae987a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_c6a2f570b24adf6309b9d0943bad7a17.setIcon(icon_7ad03752791ff9bda6d250e0c5bf1103);
+            marker_a15ac9d97395eecc01bbf81e31e0e437.setIcon(icon_9b6fcfb24848530d5f3a84f66dae987a);
         
     
-        var popup_e4120d18e4535f4bfd185a5d811d77f9 = L.popup({"maxWidth": "100%"});
+        var popup_e22f50775e501dbe0cee02d8f758d7a1 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_e649e3c6e42b31bdf89979667df1efc9 = $(`<div id="html_e649e3c6e42b31bdf89979667df1efc9" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">No significant damage</p><p style="font-size: 16px;line-height: 0.2">Medium size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' target='_blank'><img src='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' target='_blank'><img src='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' target='_blank'><img src='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_e4120d18e4535f4bfd185a5d811d77f9.setContent(html_e649e3c6e42b31bdf89979667df1efc9);
+                var html_5a9b9e4fcf437356db89b6f3ed1744d4 = $(`<div id="html_5a9b9e4fcf437356db89b6f3ed1744d4" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">No significant damage</p><p style="font-size: 12;line-height: 0.2">Medium size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' target='_blank'><img src='./photos/6efbab5d-4148-44af-a574-f497f7eced1c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' target='_blank'><img src='./photos/d3fa355b-9f1e-440e-8d1b-37a3fe577bbe.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' target='_blank'><img src='./photos/86495bc3-2444-49a1-9d6b-cb17d37b4058.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_e22f50775e501dbe0cee02d8f758d7a1.setContent(html_5a9b9e4fcf437356db89b6f3ed1744d4);
             
         
 
-        marker_c6a2f570b24adf6309b9d0943bad7a17.bindPopup(popup_e4120d18e4535f4bfd185a5d811d77f9)
+        marker_a15ac9d97395eecc01bbf81e31e0e437.bindPopup(popup_e22f50775e501dbe0cee02d8f758d7a1)
         ;
 
         
     
     
-            var marker_d94dd5e26a184f2ffb1f85f34cd45527 = L.marker(
+            var marker_4d15cba28f9a41912cb79890cd3432cb = L.marker(
                 [-32.1534849, -63.1088386],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_263bea01d56d055308d7feb9d5a92061 = L.AwesomeMarkers.icon(
+            var icon_4e3e144d4ee0b7d62c58fa6944ecdf53 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_d94dd5e26a184f2ffb1f85f34cd45527.setIcon(icon_263bea01d56d055308d7feb9d5a92061);
+            marker_4d15cba28f9a41912cb79890cd3432cb.setIcon(icon_4e3e144d4ee0b7d62c58fa6944ecdf53);
         
     
-        var popup_982cd2fa377cf193127a321bc5cb6aa3 = L.popup({"maxWidth": "100%"});
+        var popup_f5f3212d83d0c804933a640104a74b52 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_eefb022bbf10ccc95e5563a9d7232070 = $(`<div id="html_eefb022bbf10ccc95e5563a9d7232070" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Normal crop</p><p style="font-size: 16px;line-height: 0.2">Some weak stalks</p><p style='font-size: 16px;line-height: 0.2'>Damage: 0</p><div style='display: flex;'><a href='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' target='_blank'><img src='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' target='_blank'><img src='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_982cd2fa377cf193127a321bc5cb6aa3.setContent(html_eefb022bbf10ccc95e5563a9d7232070);
+                var html_f9f42d50e8f20c545001d4b29ccc16e6 = $(`<div id="html_f9f42d50e8f20c545001d4b29ccc16e6" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Normal crop</p><p style="font-size: 12;line-height: 0.2">Some weak stalks</p><p style='font-size: 12px;line-height: 0.2'>Damage: 0</p><div style='display: flex;'><a href='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' target='_blank'><img src='./photos/36fb9377-3ff0-48b0-afcc-b90878e06e44.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' target='_blank'><img src='./photos/dddc68e1-25b7-4522-aca2-5f9282ae3849.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_f5f3212d83d0c804933a640104a74b52.setContent(html_f9f42d50e8f20c545001d4b29ccc16e6);
             
         
 
-        marker_d94dd5e26a184f2ffb1f85f34cd45527.bindPopup(popup_982cd2fa377cf193127a321bc5cb6aa3)
+        marker_4d15cba28f9a41912cb79890cd3432cb.bindPopup(popup_f5f3212d83d0c804933a640104a74b52)
         ;
 
         
     
     
-            var marker_5938ac9c90a97df04c263bd06e74c16e = L.marker(
+            var marker_c17b89a8f590f60a8cd53b180b482e4e = L.marker(
                 [-32.3482139, -63.2305733],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_97d9fb7a4188a9523fb3095500bb2aeb = L.AwesomeMarkers.icon(
+            var icon_c13ac7b041b85a6adc488f93b58ecd30 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_5938ac9c90a97df04c263bd06e74c16e.setIcon(icon_97d9fb7a4188a9523fb3095500bb2aeb);
+            marker_c17b89a8f590f60a8cd53b180b482e4e.setIcon(icon_c13ac7b041b85a6adc488f93b58ecd30);
         
     
-        var popup_caa6922efc101c42e7e8449d776068fa = L.popup({"maxWidth": "100%"});
+        var popup_960c098db57fdc54b7293600fe6b85e2 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d8126eed885ccf2bc17b09dbcfc236ee = $(`<div id="html_d8126eed885ccf2bc17b09dbcfc236ee" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">No sign of infection</p><p style="font-size: 16px;line-height: 0.2">High insects population</p><p style='font-size: 16px;line-height: 0.2'>Damage: 0</p><div style='display: flex;'><a href='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' target='_blank'><img src='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' target='_blank'><img src='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_caa6922efc101c42e7e8449d776068fa.setContent(html_d8126eed885ccf2bc17b09dbcfc236ee);
+                var html_a6107e73897d498950ee602728afb270 = $(`<div id="html_a6107e73897d498950ee602728afb270" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">No sign of infection</p><p style="font-size: 12;line-height: 0.2">High insects population</p><p style='font-size: 12px;line-height: 0.2'>Damage: 0</p><div style='display: flex;'><a href='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' target='_blank'><img src='./photos/e44eb3cb-b6c0-4ee9-8844-2bd0bb2c54cb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' target='_blank'><img src='./photos/94c95f68-05b5-4b8f-bab6-3959c95013e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_960c098db57fdc54b7293600fe6b85e2.setContent(html_a6107e73897d498950ee602728afb270);
             
         
 
-        marker_5938ac9c90a97df04c263bd06e74c16e.bindPopup(popup_caa6922efc101c42e7e8449d776068fa)
+        marker_c17b89a8f590f60a8cd53b180b482e4e.bindPopup(popup_960c098db57fdc54b7293600fe6b85e2)
         ;
 
         
     
     
-            var marker_66dee4602525c9cb74866ca29d64b44d = L.marker(
+            var marker_a38dcefdc6b422100608528b3017af30 = L.marker(
                 [-32.5703721, -62.8760977],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_b2a449753a460f4ce666c391ad732483 = L.AwesomeMarkers.icon(
+            var icon_84910c791d3fe5d3d34f48091cd83638 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_66dee4602525c9cb74866ca29d64b44d.setIcon(icon_b2a449753a460f4ce666c391ad732483);
+            marker_a38dcefdc6b422100608528b3017af30.setIcon(icon_84910c791d3fe5d3d34f48091cd83638);
         
     
-        var popup_9151e01d2c081292fbaa1e88017f888d = L.popup({"maxWidth": "100%"});
+        var popup_c1335b4c1b25a67b27d0bd1f61cd33a4 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_3fbe370e40753693d63704a31326cf15 = $(`<div id="html_3fbe370e40753693d63704a31326cf15" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Some dried plants</p><p style="font-size: 16px;line-height: 0.2">Low level of damage</p><p style="font-size: 16px;line-height: 0.2">Small-medium size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 20</p><div style='display: flex;'><a href='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' target='_blank'><img src='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' target='_blank'><img src='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' target='_blank'><img src='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_9151e01d2c081292fbaa1e88017f888d.setContent(html_3fbe370e40753693d63704a31326cf15);
+                var html_1c2f27dfde94a538b05ef59b0a1b56b8 = $(`<div id="html_1c2f27dfde94a538b05ef59b0a1b56b8" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Some dried plants</p><p style="font-size: 12;line-height: 0.2">Low level of damage</p><p style="font-size: 12;line-height: 0.2">Small-medium size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 20</p><div style='display: flex;'><a href='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' target='_blank'><img src='./photos/1ad6a611-d692-49f7-8538-53a6c028eec8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' target='_blank'><img src='./photos/e10d45a1-b025-4ce7-8cb0-a3541043c4d3.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' target='_blank'><img src='./photos/08fd2981-6f55-49e6-b401-58124dbc57ce.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_c1335b4c1b25a67b27d0bd1f61cd33a4.setContent(html_1c2f27dfde94a538b05ef59b0a1b56b8);
             
         
 
-        marker_66dee4602525c9cb74866ca29d64b44d.bindPopup(popup_9151e01d2c081292fbaa1e88017f888d)
+        marker_a38dcefdc6b422100608528b3017af30.bindPopup(popup_c1335b4c1b25a67b27d0bd1f61cd33a4)
         ;
 
         
     
     
-            var marker_fbd98b993ffecd112aaddcc3d74831de = L.marker(
+            var marker_1f1111c90b3335b83d23b41bfb865267 = L.marker(
                 [-27.4381151, -61.3085507],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_6978862a46f673f5011616e407cdbd0f = L.AwesomeMarkers.icon(
+            var icon_007f2475276f7c0ff4a02fe549354ea2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_fbd98b993ffecd112aaddcc3d74831de.setIcon(icon_6978862a46f673f5011616e407cdbd0f);
+            marker_1f1111c90b3335b83d23b41bfb865267.setIcon(icon_007f2475276f7c0ff4a02fe549354ea2);
         
     
-        var popup_ff2911da9e3de31b90ef9aff5e9eee04 = L.popup({"maxWidth": "100%"});
+        var popup_0be6ae023b2649cb4e912784a3bd9476 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d2dce05dd5b6d0dd9002b7d159a2f03c = $(`<div id="html_d2dce05dd5b6d0dd9002b7d159a2f03c" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Some broken and dried plants</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style="font-size: 16px;line-height: 0.2">High variability on ears sizes</p><p style='font-size: 16px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' target='_blank'><img src='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' target='_blank'><img src='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_ff2911da9e3de31b90ef9aff5e9eee04.setContent(html_d2dce05dd5b6d0dd9002b7d159a2f03c);
+                var html_7c8e54bd4f91671c268398ab3e3a2047 = $(`<div id="html_7c8e54bd4f91671c268398ab3e3a2047" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Some broken and dried plants</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style="font-size: 12;line-height: 0.2">High variability on ears sizes</p><p style='font-size: 12px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' target='_blank'><img src='./photos/1a20b60f-6f22-4e06-8553-b1a0300b5da4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' target='_blank'><img src='./photos/687cd3b2-4f81-4d27-94e3-dfb065421e3b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_0be6ae023b2649cb4e912784a3bd9476.setContent(html_7c8e54bd4f91671c268398ab3e3a2047);
             
         
 
-        marker_fbd98b993ffecd112aaddcc3d74831de.bindPopup(popup_ff2911da9e3de31b90ef9aff5e9eee04)
+        marker_1f1111c90b3335b83d23b41bfb865267.bindPopup(popup_0be6ae023b2649cb4e912784a3bd9476)
         ;
 
         
     
     
-            var marker_43118a1676c54df87f9e0fccf051dd44 = L.marker(
+            var marker_8745ff774fed0e9258f82933661664f7 = L.marker(
                 [-27.7815846, -61.0585478],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_9b7e0719da1c2de2d9ab1ae2badfd956 = L.AwesomeMarkers.icon(
+            var icon_b6a0776b54e21be9a318cb8fd349f289 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_43118a1676c54df87f9e0fccf051dd44.setIcon(icon_9b7e0719da1c2de2d9ab1ae2badfd956);
+            marker_8745ff774fed0e9258f82933661664f7.setIcon(icon_b6a0776b54e21be9a318cb8fd349f289);
         
     
-        var popup_2734f55c2116ca32fbcaf27d7363a5fe = L.popup({"maxWidth": "100%"});
+        var popup_e2bca0f4c8190c46e35dca51965f4f3f = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_fffc105606fcf9b3009d1e2249550e4b = $(`<div id="html_fffc105606fcf9b3009d1e2249550e4b" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Some dried plants</p><p style="font-size: 16px;line-height: 0.2">Short plants</p><p style="font-size: 16px;line-height: 0.2">High variability in ears size</p><p style='font-size: 16px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' target='_blank'><img src='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' target='_blank'><img src='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' target='_blank'><img src='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' target='_blank'><img src='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_2734f55c2116ca32fbcaf27d7363a5fe.setContent(html_fffc105606fcf9b3009d1e2249550e4b);
+                var html_c20ff7426fa886df90204e3777da0ff4 = $(`<div id="html_c20ff7426fa886df90204e3777da0ff4" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Some dried plants</p><p style="font-size: 12;line-height: 0.2">Short plants</p><p style="font-size: 12;line-height: 0.2">High variability in ears size</p><p style='font-size: 12px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' target='_blank'><img src='./photos/a5498b40-d15d-44f2-9523-f2594842f4f7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' target='_blank'><img src='./photos/2e32d91e-a1c0-4d4d-b4d9-40d4b465326a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' target='_blank'><img src='./photos/50a4502b-2a09-4d83-b12d-3d5b737d1802.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' target='_blank'><img src='./photos/01e253bf-47ce-42ac-b8f5-2740c5bd12ac.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_e2bca0f4c8190c46e35dca51965f4f3f.setContent(html_c20ff7426fa886df90204e3777da0ff4);
             
         
 
-        marker_43118a1676c54df87f9e0fccf051dd44.bindPopup(popup_2734f55c2116ca32fbcaf27d7363a5fe)
+        marker_8745ff774fed0e9258f82933661664f7.bindPopup(popup_e2bca0f4c8190c46e35dca51965f4f3f)
         ;
 
         
     
     
-            var marker_bc243858403a926a66559f92169ae07c = L.marker(
+            var marker_85707ddfe969b0b1429e8862ff771556 = L.marker(
                 [-27.4802015, -60.9901824],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_a8999584730f46affc6d630f15057dee = L.AwesomeMarkers.icon(
+            var icon_e5e848767ccf5e5ca106351e3a4a1079 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_bc243858403a926a66559f92169ae07c.setIcon(icon_a8999584730f46affc6d630f15057dee);
+            marker_85707ddfe969b0b1429e8862ff771556.setIcon(icon_e5e848767ccf5e5ca106351e3a4a1079);
         
     
-        var popup_8d0809a529f302a8d268edf89cb8cfed = L.popup({"maxWidth": "100%"});
+        var popup_36f6197258f4ce699cf5a8ccf8283fc8 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_5fe5accd09ebc47caee27b3672ae3333 = $(`<div id="html_5fe5accd09ebc47caee27b3672ae3333" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Medium size plants</p><p style="font-size: 16px;line-height: 0.2">Low level of infection</p><p style="font-size: 16px;line-height: 0.2">High damage on ears in infected plants</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' target='_blank'><img src='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' target='_blank'><img src='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' target='_blank'><img src='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' target='_blank'><img src='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_8d0809a529f302a8d268edf89cb8cfed.setContent(html_5fe5accd09ebc47caee27b3672ae3333);
+                var html_16b969093916ad4c0234a7a71dcc5a1f = $(`<div id="html_16b969093916ad4c0234a7a71dcc5a1f" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Medium size plants</p><p style="font-size: 12;line-height: 0.2">Low level of infection</p><p style="font-size: 12;line-height: 0.2">High damage on ears in infected plants</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' target='_blank'><img src='./photos/a44b571a-c74d-451e-8c64-6548ceb3f273.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' target='_blank'><img src='./photos/3588dda9-1ee0-491c-b3fe-a8d85cef1ab0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' target='_blank'><img src='./photos/d3a7c9a1-cb91-45a5-8d14-1e10c3998c59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' target='_blank'><img src='./photos/91cc7922-e402-4797-b959-cd259b5ed889.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_36f6197258f4ce699cf5a8ccf8283fc8.setContent(html_16b969093916ad4c0234a7a71dcc5a1f);
             
         
 
-        marker_bc243858403a926a66559f92169ae07c.bindPopup(popup_8d0809a529f302a8d268edf89cb8cfed)
+        marker_85707ddfe969b0b1429e8862ff771556.bindPopup(popup_36f6197258f4ce699cf5a8ccf8283fc8)
         ;
 
         
     
     
-            var marker_97e730d474aa1f3e65ef49bc225f5570 = L.marker(
+            var marker_b1974ef616aa45136c235e1035d30347 = L.marker(
                 [-27.5089053, -60.877294],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_e0e55ce85d55c4ece2ea93b60f366e7b = L.AwesomeMarkers.icon(
+            var icon_7ce2a65b61e3eddd4a61d008a2069378 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_97e730d474aa1f3e65ef49bc225f5570.setIcon(icon_e0e55ce85d55c4ece2ea93b60f366e7b);
+            marker_b1974ef616aa45136c235e1035d30347.setIcon(icon_7ce2a65b61e3eddd4a61d008a2069378);
         
     
-        var popup_bd01fcc3f44ae6a7b3a57a74ff3c7c92 = L.popup({"maxWidth": "100%"});
+        var popup_dc196d13a73356ce86e5bcd83e329647 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_adfc0240f2d2f8a250c643e805f39581 = $(`<div id="html_adfc0240f2d2f8a250c643e805f39581" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Crop mostly green</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style="font-size: 16px;line-height: 0.2">Weak stalk</p><p style='font-size: 16px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' target='_blank'><img src='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' target='_blank'><img src='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' target='_blank'><img src='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' target='_blank'><img src='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_bd01fcc3f44ae6a7b3a57a74ff3c7c92.setContent(html_adfc0240f2d2f8a250c643e805f39581);
+                var html_e9d2753db4267eba8ad81798f82e55f3 = $(`<div id="html_e9d2753db4267eba8ad81798f82e55f3" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Crop mostly green</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style="font-size: 12;line-height: 0.2">Weak stalk</p><p style='font-size: 12px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' target='_blank'><img src='./photos/f401002d-1110-4eb2-b53f-fb755f812f12.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' target='_blank'><img src='./photos/e81308c9-472f-4ee7-aaf4-9462d588f13e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' target='_blank'><img src='./photos/f8bae6c6-a95e-40d4-961e-c99d68743b37.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' target='_blank'><img src='./photos/b78b9212-db23-4d6b-a7b0-166e0204219a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_dc196d13a73356ce86e5bcd83e329647.setContent(html_e9d2753db4267eba8ad81798f82e55f3);
             
         
 
-        marker_97e730d474aa1f3e65ef49bc225f5570.bindPopup(popup_bd01fcc3f44ae6a7b3a57a74ff3c7c92)
+        marker_b1974ef616aa45136c235e1035d30347.bindPopup(popup_dc196d13a73356ce86e5bcd83e329647)
         ;
 
         
     
     
-            var marker_4659de14bd660dd3126797aabd979979 = L.marker(
+            var marker_7a8853b61f0670465ebcafa3b634ca9c = L.marker(
                 [-27.4297105, -61.1241039],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_d70d31858fc27393e085b2626849178a = L.AwesomeMarkers.icon(
+            var icon_b9271f9222a66c4d0ccb4bbd5214b65d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_4659de14bd660dd3126797aabd979979.setIcon(icon_d70d31858fc27393e085b2626849178a);
+            marker_7a8853b61f0670465ebcafa3b634ca9c.setIcon(icon_b9271f9222a66c4d0ccb4bbd5214b65d);
         
     
-        var popup_a6d9efbcff6552197e14bbdb20369898 = L.popup({"maxWidth": "100%"});
+        var popup_142ae3d4cb7cfbc5d09bc70cdb589945 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d7d978282b468b84eb077c1a0d79120a = $(`<div id="html_d7d978282b468b84eb077c1a0d79120a" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Low level of infection</p><p style="font-size: 16px;line-height: 0.2">Small size ears</p><p style="font-size: 16px;line-height: 0.2">Tall plants</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' target='_blank'><img src='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' target='_blank'><img src='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' target='_blank'><img src='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' target='_blank'><img src='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' target='_blank'><img src='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_a6d9efbcff6552197e14bbdb20369898.setContent(html_d7d978282b468b84eb077c1a0d79120a);
+                var html_d2a504f1522604bcb11f3ac493cf6496 = $(`<div id="html_d2a504f1522604bcb11f3ac493cf6496" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Low level of infection</p><p style="font-size: 12;line-height: 0.2">Small size ears</p><p style="font-size: 12;line-height: 0.2">Tall plants</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' target='_blank'><img src='./photos/4d9cfb2a-e8c5-473b-9408-9840a5c24f5b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' target='_blank'><img src='./photos/81d71f84-ea0e-44c2-a2c7-c8e829b0f3da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' target='_blank'><img src='./photos/32cf7d8f-ec0b-4535-b3dc-b52489840ef7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' target='_blank'><img src='./photos/15a9de9d-cc65-41be-9dab-9dbfe7cae1e4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' target='_blank'><img src='./photos/5453f7d4-a5c2-4bc1-892d-490fd0b8ba43.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_142ae3d4cb7cfbc5d09bc70cdb589945.setContent(html_d2a504f1522604bcb11f3ac493cf6496);
             
         
 
-        marker_4659de14bd660dd3126797aabd979979.bindPopup(popup_a6d9efbcff6552197e14bbdb20369898)
+        marker_7a8853b61f0670465ebcafa3b634ca9c.bindPopup(popup_142ae3d4cb7cfbc5d09bc70cdb589945)
         ;
 
         
     
     
-            var marker_5cf8a192273ee28ba1946c8bdc14248e = L.marker(
+            var marker_e87c456c7cffd5ef27c040a6364afb57 = L.marker(
                 [-31.4798539, -61.7652752],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_2ab422bad3265b84874767baa011dac6 = L.AwesomeMarkers.icon(
+            var icon_d792b63ef2189823d11a31d250ddc44a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_5cf8a192273ee28ba1946c8bdc14248e.setIcon(icon_2ab422bad3265b84874767baa011dac6);
+            marker_e87c456c7cffd5ef27c040a6364afb57.setIcon(icon_d792b63ef2189823d11a31d250ddc44a);
         
     
-        var popup_6b7de2f42ff9058db406a67ad8b5297d = L.popup({"maxWidth": "100%"});
+        var popup_d4159e24c0eadd1e3e3105daf17aeac8 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_da1d1c7a306550b2179e565728740288 = $(`<div id="html_da1d1c7a306550b2179e565728740288" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Low level of damage</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' target='_blank'><img src='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' target='_blank'><img src='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' target='_blank'><img src='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_6b7de2f42ff9058db406a67ad8b5297d.setContent(html_da1d1c7a306550b2179e565728740288);
+                var html_cffa281e74d9ad39f7cae91de0aeb23f = $(`<div id="html_cffa281e74d9ad39f7cae91de0aeb23f" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Low level of damage</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' target='_blank'><img src='./photos/7c336e0b-9f2c-452c-aec3-81f7d67b26b2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' target='_blank'><img src='./photos/55362fdf-b1fd-4a76-a83b-8af7123b8e52.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' target='_blank'><img src='./photos/70515256-d35e-4cc6-b95c-40e3c3de80fd.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_d4159e24c0eadd1e3e3105daf17aeac8.setContent(html_cffa281e74d9ad39f7cae91de0aeb23f);
             
         
 
-        marker_5cf8a192273ee28ba1946c8bdc14248e.bindPopup(popup_6b7de2f42ff9058db406a67ad8b5297d)
+        marker_e87c456c7cffd5ef27c040a6364afb57.bindPopup(popup_d4159e24c0eadd1e3e3105daf17aeac8)
         ;
 
         
     
     
-            var marker_fa23f23d2c5a635c95de0a43b1efa349 = L.marker(
+            var marker_5239b47272d3834bd31327be66a2f9f0 = L.marker(
                 [-31.1363184, -61.4732649],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_d5fb2d0e759939785553dc5ce0fbbf22 = L.AwesomeMarkers.icon(
+            var icon_9798319abac22436377e98198212075e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_fa23f23d2c5a635c95de0a43b1efa349.setIcon(icon_d5fb2d0e759939785553dc5ce0fbbf22);
+            marker_5239b47272d3834bd31327be66a2f9f0.setIcon(icon_9798319abac22436377e98198212075e);
         
     
-        var popup_b4138000c8635011f0019d7fe99c6d9d = L.popup({"maxWidth": "100%"});
+        var popup_d77cc1784dd7228572f88e45000de5ca = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_dd0b2f2c2d41e757613c7de5e2d68da2 = $(`<div id="html_dd0b2f2c2d41e757613c7de5e2d68da2" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Crop flattened</p><p style="font-size: 16px;line-height: 0.2">Underdeveloped ears</p><p style="font-size: 16px;line-height: 0.2">Very low quality of grains</p><p style='font-size: 16px;line-height: 0.2'>Damage: 75</p><div style='display: flex;'><a href='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' target='_blank'><img src='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' target='_blank'><img src='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' target='_blank'><img src='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' target='_blank'><img src='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_b4138000c8635011f0019d7fe99c6d9d.setContent(html_dd0b2f2c2d41e757613c7de5e2d68da2);
+                var html_028c8baca945468b849465895ddef727 = $(`<div id="html_028c8baca945468b849465895ddef727" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Crop flattened</p><p style="font-size: 12;line-height: 0.2">Underdeveloped ears</p><p style="font-size: 12;line-height: 0.2">Very low quality of grains</p><p style='font-size: 12px;line-height: 0.2'>Damage: 75</p><div style='display: flex;'><a href='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' target='_blank'><img src='./photos/f96176d0-e20e-4011-9144-6d7c58b8ffb1.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' target='_blank'><img src='./photos/6468a9a4-19c9-4861-a942-f866b3ccc692.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' target='_blank'><img src='./photos/282d125b-4e0a-4f13-a9ce-c202ec27d0ea.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' target='_blank'><img src='./photos/3ac69e5b-ae6b-452b-925e-7d4ad7c983e7.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_d77cc1784dd7228572f88e45000de5ca.setContent(html_028c8baca945468b849465895ddef727);
             
         
 
-        marker_fa23f23d2c5a635c95de0a43b1efa349.bindPopup(popup_b4138000c8635011f0019d7fe99c6d9d)
+        marker_5239b47272d3834bd31327be66a2f9f0.bindPopup(popup_d77cc1784dd7228572f88e45000de5ca)
         ;
 
         
     
     
-            var marker_be2cd172631a57a85c46c9dc969550be = L.marker(
+            var marker_a267e2a0991544b993e311affbaa13dc = L.marker(
                 [-30.9132043, -61.5551688],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_8c81aeb019eff8e9db387446f1f1e05c = L.AwesomeMarkers.icon(
+            var icon_7e5ed1737866a1783f56243f3958716d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_be2cd172631a57a85c46c9dc969550be.setIcon(icon_8c81aeb019eff8e9db387446f1f1e05c);
+            marker_a267e2a0991544b993e311affbaa13dc.setIcon(icon_7e5ed1737866a1783f56243f3958716d);
         
     
-        var popup_ea172d05b636a9ffd8ff6bb05f7aa964 = L.popup({"maxWidth": "100%"});
+        var popup_358b64fa7652697dda5c2a8e5d76428a = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_230c8d130a9f2bffc7642dee989c6637 = $(`<div id="html_230c8d130a9f2bffc7642dee989c6637" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of leaning and broken plants</p><p style="font-size: 16px;line-height: 0.2">Poor ear development</p><p style='font-size: 16px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' target='_blank'><img src='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' target='_blank'><img src='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' target='_blank'><img src='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_ea172d05b636a9ffd8ff6bb05f7aa964.setContent(html_230c8d130a9f2bffc7642dee989c6637);
+                var html_b86b54a2b34a0b9acad12b331c427c65 = $(`<div id="html_b86b54a2b34a0b9acad12b331c427c65" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of leaning and broken plants</p><p style="font-size: 12;line-height: 0.2">Poor ear development</p><p style='font-size: 12px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' target='_blank'><img src='./photos/ff1de01e-2e67-42ff-9a39-14cd98120803.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' target='_blank'><img src='./photos/00815532-7fb3-451c-b04b-21ceef578f74.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' target='_blank'><img src='./photos/2a396ee2-6cb7-42fc-93f2-c15f4c8db075.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_358b64fa7652697dda5c2a8e5d76428a.setContent(html_b86b54a2b34a0b9acad12b331c427c65);
             
         
 
-        marker_be2cd172631a57a85c46c9dc969550be.bindPopup(popup_ea172d05b636a9ffd8ff6bb05f7aa964)
+        marker_a267e2a0991544b993e311affbaa13dc.bindPopup(popup_358b64fa7652697dda5c2a8e5d76428a)
         ;
 
         
     
     
-            var marker_59bb55c036ed2f7954a1bcdf802b6f0f = L.marker(
+            var marker_a8897ccb74409ce0db03c77538ce949e = L.marker(
                 [-30.6707731, -61.6299612],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_d17ca6b490e80bd07c969c35a14be557 = L.AwesomeMarkers.icon(
+            var icon_c9467f905f46ab4a5065bb09b542a949 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_59bb55c036ed2f7954a1bcdf802b6f0f.setIcon(icon_d17ca6b490e80bd07c969c35a14be557);
+            marker_a8897ccb74409ce0db03c77538ce949e.setIcon(icon_c9467f905f46ab4a5065bb09b542a949);
         
     
-        var popup_a9d38a8bfc82a8b3439408bdc69f078b = L.popup({"maxWidth": "100%"});
+        var popup_034ad976e06696d9c61f82a282bfd14b = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_adb1422c11e811c5ae44e41dc4969800 = $(`<div id="html_adb1422c11e811c5ae44e41dc4969800" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Short plants</p><p style="font-size: 16px;line-height: 0.2">Underdeveloped ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 40</p><div style='display: flex;'><a href='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' target='_blank'><img src='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' target='_blank'><img src='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' target='_blank'><img src='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_a9d38a8bfc82a8b3439408bdc69f078b.setContent(html_adb1422c11e811c5ae44e41dc4969800);
+                var html_667d4dc9f40b79eda09ea09abfdca706 = $(`<div id="html_667d4dc9f40b79eda09ea09abfdca706" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Short plants</p><p style="font-size: 12;line-height: 0.2">Underdeveloped ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 40</p><div style='display: flex;'><a href='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' target='_blank'><img src='./photos/121b58ee-9d38-41df-a07d-4e412338f065.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' target='_blank'><img src='./photos/285accd3-ef29-48f8-914f-6f23a538d649.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' target='_blank'><img src='./photos/f937c8cd-fc44-4caa-a814-d54625a6af20.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_034ad976e06696d9c61f82a282bfd14b.setContent(html_667d4dc9f40b79eda09ea09abfdca706);
             
         
 
-        marker_59bb55c036ed2f7954a1bcdf802b6f0f.bindPopup(popup_a9d38a8bfc82a8b3439408bdc69f078b)
+        marker_a8897ccb74409ce0db03c77538ce949e.bindPopup(popup_034ad976e06696d9c61f82a282bfd14b)
         ;
 
         
     
     
-            var marker_6622762ce71d70d70f7bf669bd19bad0 = L.marker(
+            var marker_c84084656beec044df032cd2e2a1da4f = L.marker(
                 [-30.0611855, -61.8125965],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_fabacc49df9f7c73d6a94c1ac49a0fe3 = L.AwesomeMarkers.icon(
+            var icon_0d6cfab1e1e99e8f449c110f0c64f512 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_6622762ce71d70d70f7bf669bd19bad0.setIcon(icon_fabacc49df9f7c73d6a94c1ac49a0fe3);
+            marker_c84084656beec044df032cd2e2a1da4f.setIcon(icon_0d6cfab1e1e99e8f449c110f0c64f512);
         
     
-        var popup_24fdd514532c5b347e1de48efce01b55 = L.popup({"maxWidth": "100%"});
+        var popup_ab9962907db330e565a5c14f0540f55c = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_872038de515463847875943dddf549c6 = $(`<div id="html_872038de515463847875943dddf549c6" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of broken plants</p><p style="font-size: 16px;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 16px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' target='_blank'><img src='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' target='_blank'><img src='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' target='_blank'><img src='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' target='_blank'><img src='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_24fdd514532c5b347e1de48efce01b55.setContent(html_872038de515463847875943dddf549c6);
+                var html_af24dcffd8d7e3f53d1b979b41d8f7d5 = $(`<div id="html_af24dcffd8d7e3f53d1b979b41d8f7d5" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of broken plants</p><p style="font-size: 12;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 12px;line-height: 0.2'>Damage: 45</p><div style='display: flex;'><a href='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' target='_blank'><img src='./photos/a4c5b233-ae35-4d1c-89bb-e3113fb6e50c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' target='_blank'><img src='./photos/da569740-574a-4ef6-b3ba-31ddd5c99732.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' target='_blank'><img src='./photos/220cf378-1149-4ff0-a6c5-7d8c688d422b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' target='_blank'><img src='./photos/86e424ad-0bd6-4a15-b080-5ae968d31421.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_ab9962907db330e565a5c14f0540f55c.setContent(html_af24dcffd8d7e3f53d1b979b41d8f7d5);
             
         
 
-        marker_6622762ce71d70d70f7bf669bd19bad0.bindPopup(popup_24fdd514532c5b347e1de48efce01b55)
+        marker_c84084656beec044df032cd2e2a1da4f.bindPopup(popup_ab9962907db330e565a5c14f0540f55c)
         ;
 
         
     
     
-            var marker_6e36c5e13e9d37d3ce61baa8ca09fb1f = L.marker(
+            var marker_cb2a069bc29bbec544073ed94caed9cf = L.marker(
                 [-31.4312162, -62.0121321],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_901cfc4c6b9241a889c5eae8de0f2696 = L.AwesomeMarkers.icon(
+            var icon_f47dedef9b12b4c33ad92be80ea31d0a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_6e36c5e13e9d37d3ce61baa8ca09fb1f.setIcon(icon_901cfc4c6b9241a889c5eae8de0f2696);
+            marker_cb2a069bc29bbec544073ed94caed9cf.setIcon(icon_f47dedef9b12b4c33ad92be80ea31d0a);
         
     
-        var popup_27e706106793d6f6c54c0ea59635df33 = L.popup({"maxWidth": "100%"});
+        var popup_cc8c4ddf3b70f94d5dc90bb0b0ed9cab = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d4681c37bf138cd03b0ac979c89f29e3 = $(`<div id="html_d4681c37bf138cd03b0ac979c89f29e3" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of leaning plants</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style="font-size: 16px;line-height: 0.2">No ears on most affected plants</p><p style='font-size: 16px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' target='_blank'><img src='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' target='_blank'><img src='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' target='_blank'><img src='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_27e706106793d6f6c54c0ea59635df33.setContent(html_d4681c37bf138cd03b0ac979c89f29e3);
+                var html_b61f47efd2bdd81da87c7d08dd8003de = $(`<div id="html_b61f47efd2bdd81da87c7d08dd8003de" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of leaning plants</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style="font-size: 12;line-height: 0.2">No ears on most affected plants</p><p style='font-size: 12px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' target='_blank'><img src='./photos/d3a0eb7e-9710-4d29-a6ee-cd6b1f16c238.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' target='_blank'><img src='./photos/1099c15e-82e1-4c73-8209-1fd6b9811ad0.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' target='_blank'><img src='./photos/41278a11-b251-4058-a6a8-ceba013a5a16.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_cc8c4ddf3b70f94d5dc90bb0b0ed9cab.setContent(html_b61f47efd2bdd81da87c7d08dd8003de);
             
         
 
-        marker_6e36c5e13e9d37d3ce61baa8ca09fb1f.bindPopup(popup_27e706106793d6f6c54c0ea59635df33)
+        marker_cb2a069bc29bbec544073ed94caed9cf.bindPopup(popup_cc8c4ddf3b70f94d5dc90bb0b0ed9cab)
         ;
 
         
     
     
-            var marker_ecce7586bd9570f8da19c4656346544d = L.marker(
+            var marker_f83292df73f63162528b79c1edce822b = L.marker(
                 [-28.8268601, -62.3472244],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_355390863e08b33ad59b0f1b99f4fffc = L.AwesomeMarkers.icon(
+            var icon_dc3a7252ae4e156b6421ee4ec7eb4cc7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_ecce7586bd9570f8da19c4656346544d.setIcon(icon_355390863e08b33ad59b0f1b99f4fffc);
+            marker_f83292df73f63162528b79c1edce822b.setIcon(icon_dc3a7252ae4e156b6421ee4ec7eb4cc7);
         
     
-        var popup_e53e6049c23c3656a5ab39e3d72d1746 = L.popup({"maxWidth": "100%"});
+        var popup_caf6f8623ed7414d7f11a2125a12460c = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_07a61ed59058437b8d586e8781e25099 = $(`<div id="html_07a61ed59058437b8d586e8781e25099" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of broken plants</p><p style="font-size: 16px;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 16px;line-height: 0.2'>Damage: 50</p><div style='display: flex;'><a href='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' target='_blank'><img src='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' target='_blank'><img src='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' target='_blank'><img src='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_e53e6049c23c3656a5ab39e3d72d1746.setContent(html_07a61ed59058437b8d586e8781e25099);
+                var html_89bd6ba9fa1a78d51674c600bcbf267d = $(`<div id="html_89bd6ba9fa1a78d51674c600bcbf267d" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of broken plants</p><p style="font-size: 12;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 12px;line-height: 0.2'>Damage: 50</p><div style='display: flex;'><a href='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' target='_blank'><img src='./photos/0432682e-b9c0-41cc-acad-83d74025de76.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' target='_blank'><img src='./photos/6d7f32f2-c4a6-4aeb-adf9-59767a15a2c9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' target='_blank'><img src='./photos/f12bd510-5df7-4e7e-891a-e190bb505e5a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_caf6f8623ed7414d7f11a2125a12460c.setContent(html_89bd6ba9fa1a78d51674c600bcbf267d);
             
         
 
-        marker_ecce7586bd9570f8da19c4656346544d.bindPopup(popup_e53e6049c23c3656a5ab39e3d72d1746)
+        marker_f83292df73f63162528b79c1edce822b.bindPopup(popup_caf6f8623ed7414d7f11a2125a12460c)
         ;
 
         
     
     
-            var marker_8bfb6e79b6872b59a37b566091320d3d = L.marker(
+            var marker_3143a17f6da8e68cc5f6c0f81e1bb41c = L.marker(
                 [-28.1986662, -62.7414252],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_c38ee0440f385992da978008ade387e8 = L.AwesomeMarkers.icon(
+            var icon_6a7c487cf46b3ee79fdaa6c2aed7b5f0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_8bfb6e79b6872b59a37b566091320d3d.setIcon(icon_c38ee0440f385992da978008ade387e8);
+            marker_3143a17f6da8e68cc5f6c0f81e1bb41c.setIcon(icon_6a7c487cf46b3ee79fdaa6c2aed7b5f0);
         
     
-        var popup_8d5f0f4b1379ca9f53705830e53ace8c = L.popup({"maxWidth": "100%"});
+        var popup_5d1513dc01ab7bd41dc9f67ee52fcffe = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_7af65235f91e34f3226352f6bc4cc2a6 = $(`<div id="html_7af65235f91e34f3226352f6bc4cc2a6" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Tall plants</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style="font-size: 16px;line-height: 0.2">High variability on ears size</p><p style='font-size: 16px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' target='_blank'><img src='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' target='_blank'><img src='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' target='_blank'><img src='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_8d5f0f4b1379ca9f53705830e53ace8c.setContent(html_7af65235f91e34f3226352f6bc4cc2a6);
+                var html_7bc267f4d01ff0bf35d1df17f3a1709a = $(`<div id="html_7bc267f4d01ff0bf35d1df17f3a1709a" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Tall plants</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style="font-size: 12;line-height: 0.2">High variability on ears size</p><p style='font-size: 12px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' target='_blank'><img src='./photos/d0dd6945-128d-4857-80f8-779ec447a8da.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' target='_blank'><img src='./photos/65f5ca07-827e-443c-93e4-dc4c7373394c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' target='_blank'><img src='./photos/7f4f5d70-a122-4fe0-b1f6-c9675544e89e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_5d1513dc01ab7bd41dc9f67ee52fcffe.setContent(html_7bc267f4d01ff0bf35d1df17f3a1709a);
             
         
 
-        marker_8bfb6e79b6872b59a37b566091320d3d.bindPopup(popup_8d5f0f4b1379ca9f53705830e53ace8c)
+        marker_3143a17f6da8e68cc5f6c0f81e1bb41c.bindPopup(popup_5d1513dc01ab7bd41dc9f67ee52fcffe)
         ;
 
         
     
     
-            var marker_b430a26ee134f7ec0f7cef5e63258615 = L.marker(
+            var marker_4ff3b0d739fc0d9d37abcb6213a8a4bf = L.marker(
                 [-27.8162807, -62.5309443],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_93b4f4a5beb7008980add4f1c8d75de7 = L.AwesomeMarkers.icon(
+            var icon_f2256bff4145fdfb26b19afe76713301 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_b430a26ee134f7ec0f7cef5e63258615.setIcon(icon_93b4f4a5beb7008980add4f1c8d75de7);
+            marker_4ff3b0d739fc0d9d37abcb6213a8a4bf.setIcon(icon_f2256bff4145fdfb26b19afe76713301);
         
     
-        var popup_d4e42f5182d7a7618759e977c075fec5 = L.popup({"maxWidth": "100%"});
+        var popup_90084ce0657ca0d442f750d4395a940b = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_ceb6a973eaabcd1e0ba5158de06af22f = $(`<div id="html_ceb6a973eaabcd1e0ba5158de06af22f" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">No infection</p><p style="font-size: 16px;line-height: 0.2">High insects population</p><p style='font-size: 16px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' target='_blank'><img src='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' target='_blank'><img src='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' target='_blank'><img src='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' target='_blank'><img src='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_d4e42f5182d7a7618759e977c075fec5.setContent(html_ceb6a973eaabcd1e0ba5158de06af22f);
+                var html_bae766b103d129e5756b3d63116dc03f = $(`<div id="html_bae766b103d129e5756b3d63116dc03f" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">No infection</p><p style="font-size: 12;line-height: 0.2">High insects population</p><p style='font-size: 12px;line-height: 0.2'>Damage: 5</p><div style='display: flex;'><a href='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' target='_blank'><img src='./photos/880ab103-7b55-43b6-8a6d-8f91eb5c8d7f.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' target='_blank'><img src='./photos/bcfa9810-f237-4c2b-8870-1434d6edb92e.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' target='_blank'><img src='./photos/410c7926-bf82-44dc-a670-dcdee307bcba.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' target='_blank'><img src='./photos/e190d501-e2de-44b9-8b3f-cdf025a290a5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_90084ce0657ca0d442f750d4395a940b.setContent(html_bae766b103d129e5756b3d63116dc03f);
             
         
 
-        marker_b430a26ee134f7ec0f7cef5e63258615.bindPopup(popup_d4e42f5182d7a7618759e977c075fec5)
+        marker_4ff3b0d739fc0d9d37abcb6213a8a4bf.bindPopup(popup_90084ce0657ca0d442f750d4395a940b)
         ;
 
         
     
     
-            var marker_fd4c700da6ca236f21930908767da7d4 = L.marker(
+            var marker_be12e50b231ab720a9917db2a2102794 = L.marker(
                 [-27.6344342, -62.289159],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_6d9ac80c6a23602b60e6fb60da067d3c = L.AwesomeMarkers.icon(
+            var icon_0fbc4ee40e29b45faa90c470458ae888 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_fd4c700da6ca236f21930908767da7d4.setIcon(icon_6d9ac80c6a23602b60e6fb60da067d3c);
+            marker_be12e50b231ab720a9917db2a2102794.setIcon(icon_0fbc4ee40e29b45faa90c470458ae888);
         
     
-        var popup_032f6726fefcaff5df93a44bffecf4da = L.popup({"maxWidth": "100%"});
+        var popup_9dbf856e3606d2af4665dd000d7d5a84 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_87efcb512cb0a9eee5f6080623a05a2b = $(`<div id="html_87efcb512cb0a9eee5f6080623a05a2b" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Low impact on crop</p><p style="font-size: 16px;line-height: 0.2">High insect population</p><p style="font-size: 16px;line-height: 0.2">medium size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 15</p><div style='display: flex;'><a href='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' target='_blank'><img src='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' target='_blank'><img src='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' target='_blank'><img src='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' target='_blank'><img src='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_032f6726fefcaff5df93a44bffecf4da.setContent(html_87efcb512cb0a9eee5f6080623a05a2b);
+                var html_fd033974a4f3a9b63faeded288c05720 = $(`<div id="html_fd033974a4f3a9b63faeded288c05720" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Low impact on crop</p><p style="font-size: 12;line-height: 0.2">High insect population</p><p style="font-size: 12;line-height: 0.2">medium size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 15</p><div style='display: flex;'><a href='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' target='_blank'><img src='./photos/47bccf6b-8350-4c8e-a9d8-1764c03bfa8c.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' target='_blank'><img src='./photos/69faeafc-48eb-44ae-8a19-1f4b50c8dd38.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' target='_blank'><img src='./photos/e0e5678e-b1b6-4003-97c5-b68330ff08ad.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' target='_blank'><img src='./photos/3af85957-0757-499d-b8af-cca7f0bf2f2a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_9dbf856e3606d2af4665dd000d7d5a84.setContent(html_fd033974a4f3a9b63faeded288c05720);
             
         
 
-        marker_fd4c700da6ca236f21930908767da7d4.bindPopup(popup_032f6726fefcaff5df93a44bffecf4da)
+        marker_be12e50b231ab720a9917db2a2102794.bindPopup(popup_9dbf856e3606d2af4665dd000d7d5a84)
         ;
 
         
     
     
-            var marker_bf21f6e3076f0a4fe4def3a77976b27b = L.marker(
+            var marker_dd8090194bdebad7ef1081083c3c3f87 = L.marker(
                 [-28.7270177, -62.477126],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_631270c1b00af08804acb52d6770e66a = L.AwesomeMarkers.icon(
+            var icon_e5d125052068196b457a017f376b0716 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_bf21f6e3076f0a4fe4def3a77976b27b.setIcon(icon_631270c1b00af08804acb52d6770e66a);
+            marker_dd8090194bdebad7ef1081083c3c3f87.setIcon(icon_e5d125052068196b457a017f376b0716);
         
     
-        var popup_7599433bd88187e708625f2bc56a48b1 = L.popup({"maxWidth": "100%"});
+        var popup_2c24c48428dde7e405b0e879840d5ba5 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d9beabccdebe3be9dbdbb73a7d26f920 = $(`<div id="html_d9beabccdebe3be9dbdbb73a7d26f920" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Decent ears</p><p style="font-size: 16px;line-height: 0.2">High insect population</p><p style="font-size: 16px;line-height: 0.2">Hig symptons</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' target='_blank'><img src='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' target='_blank'><img src='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' target='_blank'><img src='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_7599433bd88187e708625f2bc56a48b1.setContent(html_d9beabccdebe3be9dbdbb73a7d26f920);
+                var html_2c927b4b150901bd272d4ebdb1004801 = $(`<div id="html_2c927b4b150901bd272d4ebdb1004801" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Decent ears</p><p style="font-size: 12;line-height: 0.2">High insect population</p><p style="font-size: 12;line-height: 0.2">Hig symptons</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' target='_blank'><img src='./photos/f7fea1ab-c6b2-4814-b6bf-4086da407a56.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' target='_blank'><img src='./photos/1cb03a23-8649-42ba-8154-0d3e59a3d8d5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' target='_blank'><img src='./photos/383a2c46-1fe5-4541-93ed-ad00bfa12d59.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_2c24c48428dde7e405b0e879840d5ba5.setContent(html_2c927b4b150901bd272d4ebdb1004801);
             
         
 
-        marker_bf21f6e3076f0a4fe4def3a77976b27b.bindPopup(popup_7599433bd88187e708625f2bc56a48b1)
+        marker_dd8090194bdebad7ef1081083c3c3f87.bindPopup(popup_2c24c48428dde7e405b0e879840d5ba5)
         ;
 
         
     
     
-            var marker_e9ed67cb2cacf38e5d7a14171ad295cf = L.marker(
+            var marker_5f633e234eba796d5663536e57432322 = L.marker(
                 [-28.9035524, -62.2808683],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_3ca6622f6585442e2007dfd5a1bc1d75 = L.AwesomeMarkers.icon(
+            var icon_6480102af24ea0c964cbf8e246cd277a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_e9ed67cb2cacf38e5d7a14171ad295cf.setIcon(icon_3ca6622f6585442e2007dfd5a1bc1d75);
+            marker_5f633e234eba796d5663536e57432322.setIcon(icon_6480102af24ea0c964cbf8e246cd277a);
         
     
-        var popup_639f677b78a1aece85226d50b3a235a4 = L.popup({"maxWidth": "100%"});
+        var popup_295db308d9dedd9ba2222a16f4587dc5 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_1bff82d6e76a78ea3e3d72cd428a2d8e = $(`<div id="html_1bff82d6e76a78ea3e3d72cd428a2d8e" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Lot of broken plants</p><p style="font-size: 16px;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 16px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' target='_blank'><img src='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' target='_blank'><img src='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' target='_blank'><img src='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' target='_blank'><img src='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_639f677b78a1aece85226d50b3a235a4.setContent(html_1bff82d6e76a78ea3e3d72cd428a2d8e);
+                var html_d256cb6c878869712e7ff4ad9af7e0f0 = $(`<div id="html_d256cb6c878869712e7ff4ad9af7e0f0" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Lot of broken plants</p><p style="font-size: 12;line-height: 0.2">Small size ears and light grains</p><p style='font-size: 12px;line-height: 0.2'>Damage: 60</p><div style='display: flex;'><a href='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' target='_blank'><img src='./photos/1fbec926-43ea-43bc-a173-bb0223e47251.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' target='_blank'><img src='./photos/f375b14c-67e0-47bd-973f-7d582dd260b8.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' target='_blank'><img src='./photos/334638e2-7793-442a-a078-c052c5aa804b.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' target='_blank'><img src='./photos/a378c55b-ac3f-487a-97e7-8ae2434b3d41.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_295db308d9dedd9ba2222a16f4587dc5.setContent(html_d256cb6c878869712e7ff4ad9af7e0f0);
             
         
 
-        marker_e9ed67cb2cacf38e5d7a14171ad295cf.bindPopup(popup_639f677b78a1aece85226d50b3a235a4)
+        marker_5f633e234eba796d5663536e57432322.bindPopup(popup_295db308d9dedd9ba2222a16f4587dc5)
         ;
 
         
     
     
-            var marker_99070e9512a63edb837fa9cd14640b61 = L.marker(
+            var marker_941f8da57a080e41394be2b263c1491d = L.marker(
                 [-28.9698226, -62.156326],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_7d5c6d5f5f267854d421d77c53a87022 = L.AwesomeMarkers.icon(
+            var icon_fc413213e8876ea25342b0be3f0b76c6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_99070e9512a63edb837fa9cd14640b61.setIcon(icon_7d5c6d5f5f267854d421d77c53a87022);
+            marker_941f8da57a080e41394be2b263c1491d.setIcon(icon_fc413213e8876ea25342b0be3f0b76c6);
         
     
-        var popup_c27767710e9d7e793e6b50ecb7a86641 = L.popup({"maxWidth": "100%"});
+        var popup_a32b9f35080f8ec1b9f8f8084229343d = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_9a06e5485b79c9b0b6635ec95f7df68b = $(`<div id="html_9a06e5485b79c9b0b6635ec95f7df68b" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Tall and green plants</p><p style="font-size: 16px;line-height: 0.2">Medium level of infection</p><p style="font-size: 16px;line-height: 0.2">Small-medium size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 25</p><div style='display: flex;'><a href='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' target='_blank'><img src='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' target='_blank'><img src='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_c27767710e9d7e793e6b50ecb7a86641.setContent(html_9a06e5485b79c9b0b6635ec95f7df68b);
+                var html_de7eb2153bd16f878e25bac998fabf5a = $(`<div id="html_de7eb2153bd16f878e25bac998fabf5a" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Tall and green plants</p><p style="font-size: 12;line-height: 0.2">Medium level of infection</p><p style="font-size: 12;line-height: 0.2">Small-medium size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 25</p><div style='display: flex;'><a href='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' target='_blank'><img src='./photos/8e0674b7-e1a0-4f27-a0aa-186e6293092a-bf3de8ce-e992-4b83-ac0b-638254ae8072.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' target='_blank'><img src='./photos/9459dc46-4272-4597-b595-f3a415029ad5-c154dd53-ef46-4660-bf47-71e15a277884.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_a32b9f35080f8ec1b9f8f8084229343d.setContent(html_de7eb2153bd16f878e25bac998fabf5a);
             
         
 
-        marker_99070e9512a63edb837fa9cd14640b61.bindPopup(popup_c27767710e9d7e793e6b50ecb7a86641)
+        marker_941f8da57a080e41394be2b263c1491d.bindPopup(popup_a32b9f35080f8ec1b9f8f8084229343d)
         ;
 
         
     
     
-            var marker_1374cf6c4b34ddf8122ba02a7ad599c0 = L.marker(
+            var marker_54528acd4a90d1f55fdab80a6bdfe0f8 = L.marker(
                 [-27.6172571, -62.1418619],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_b0a64751e33155a023400dcb232b5453 = L.AwesomeMarkers.icon(
+            var icon_c11981cb1a7cc42e1e4cae26bf52a2e3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_1374cf6c4b34ddf8122ba02a7ad599c0.setIcon(icon_b0a64751e33155a023400dcb232b5453);
+            marker_54528acd4a90d1f55fdab80a6bdfe0f8.setIcon(icon_c11981cb1a7cc42e1e4cae26bf52a2e3);
         
     
-        var popup_733a8ebd3ffdebd489c70956abefa2fa = L.popup({"maxWidth": "100%"});
+        var popup_fb367465f8546a202a290b50db2d5a49 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_cbf83d0b8e301027030235d41f292adb = $(`<div id="html_cbf83d0b8e301027030235d41f292adb" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Tall and dried plants</p><p style="font-size: 16px;line-height: 0.2">Small grains on most affected plants</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' target='_blank'><img src='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' target='_blank'><img src='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' target='_blank'><img src='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' target='_blank'><img src='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' target='_blank'><img src='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_733a8ebd3ffdebd489c70956abefa2fa.setContent(html_cbf83d0b8e301027030235d41f292adb);
+                var html_17b01a607df97f78f029e9f684fa1ab6 = $(`<div id="html_17b01a607df97f78f029e9f684fa1ab6" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Tall and dried plants</p><p style="font-size: 12;line-height: 0.2">Small grains on most affected plants</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' target='_blank'><img src='./photos/b7a9b532-7e7d-4fb2-9e9b-21dabad862ef.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' target='_blank'><img src='./photos/606e773c-08d6-410b-a5d4-993d143287fb.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' target='_blank'><img src='./photos/2a51b691-a07c-4fb5-8f20-f42ca0627a50.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' target='_blank'><img src='./photos/cef670d0-e244-42b7-8d02-00e0bdd8150a.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' target='_blank'><img src='./photos/c44f10ad-024a-4014-95be-ecf78df00a49.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_fb367465f8546a202a290b50db2d5a49.setContent(html_17b01a607df97f78f029e9f684fa1ab6);
             
         
 
-        marker_1374cf6c4b34ddf8122ba02a7ad599c0.bindPopup(popup_733a8ebd3ffdebd489c70956abefa2fa)
+        marker_54528acd4a90d1f55fdab80a6bdfe0f8.bindPopup(popup_fb367465f8546a202a290b50db2d5a49)
         ;
 
         
     
     
-            var marker_a975549500fbe41bb5f217f0b29167e2 = L.marker(
+            var marker_c9a836b6021298f3acfb46cc263ee8b1 = L.marker(
                 [-29.010669, -62.088887],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_9b961173d96862995db57cd8f014f40c = L.AwesomeMarkers.icon(
+            var icon_7f6fdb0b3fec56ab93e4a13b16d91576 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
             );
-            marker_a975549500fbe41bb5f217f0b29167e2.setIcon(icon_9b961173d96862995db57cd8f014f40c);
+            marker_c9a836b6021298f3acfb46cc263ee8b1.setIcon(icon_7f6fdb0b3fec56ab93e4a13b16d91576);
         
     
-        var popup_6c360739998882e2c25ccaccfd6a4748 = L.popup({"maxWidth": "100%"});
+        var popup_8278160f3cbc0cfd3f98cfbda99d5e44 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_313fb000d6c74aa60bc2b7efc66d569f = $(`<div id="html_313fb000d6c74aa60bc2b7efc66d569f" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Short plants</p><p style="font-size: 16px;line-height: 0.2">High level of infection</p><p style='font-size: 16px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' target='_blank'><img src='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' target='_blank'><img src='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' target='_blank'><img src='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_6c360739998882e2c25ccaccfd6a4748.setContent(html_313fb000d6c74aa60bc2b7efc66d569f);
+                var html_eb28c46fa01c39f3c2f5277a64ae78ec = $(`<div id="html_eb28c46fa01c39f3c2f5277a64ae78ec" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Short plants</p><p style="font-size: 12;line-height: 0.2">High level of infection</p><p style='font-size: 12px;line-height: 0.2'>Damage: 55</p><div style='display: flex;'><a href='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' target='_blank'><img src='./photos/fe362a78-8773-40d4-82ae-a6fec35a9b99.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' target='_blank'><img src='./photos/0b74d86f-63ec-4a4d-809c-b0912d40a6c4.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' target='_blank'><img src='./photos/a8cd04c8-9d04-401a-9a71-2c1ee9f1a2d9.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_8278160f3cbc0cfd3f98cfbda99d5e44.setContent(html_eb28c46fa01c39f3c2f5277a64ae78ec);
             
         
 
-        marker_a975549500fbe41bb5f217f0b29167e2.bindPopup(popup_6c360739998882e2c25ccaccfd6a4748)
+        marker_c9a836b6021298f3acfb46cc263ee8b1.bindPopup(popup_8278160f3cbc0cfd3f98cfbda99d5e44)
         ;
 
         
     
     
-            var marker_3450d697371d6085b36ce77c1e72bf25 = L.marker(
+            var marker_4edae3cfb0048a67edfc06f5fc75a4b4 = L.marker(
                 [-27.99595, -62.6304897],
                 {}
-            ).addTo(map_155d7a670720e123eddcdd2b5ac75959);
+            ).addTo(map_2325012c8fdfb533cb67d1a382b093a5);
         
     
-            var icon_df15062c6033db0afa0353e9529f4777 = L.AwesomeMarkers.icon(
+            var icon_3efa30ab6eb5c81fcb90d6c9d4854143 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_3450d697371d6085b36ce77c1e72bf25.setIcon(icon_df15062c6033db0afa0353e9529f4777);
+            marker_4edae3cfb0048a67edfc06f5fc75a4b4.setIcon(icon_3efa30ab6eb5c81fcb90d6c9d4854143);
         
     
-        var popup_fa2b0c4aa69bb9e0841b7374600e751a = L.popup({"maxWidth": "100%"});
+        var popup_4bccf505d69026d055546d87205c6caa = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_0ecf264ee0ff16a346338ad9c086865c = $(`<div id="html_0ecf264ee0ff16a346338ad9c086865c" style="width: 100.0%; height: 100.0%;"><p style="font-size: 16px;line-height: 0.2">Medium size and green plants</p><p style="font-size: 16px;line-height: 0.2">High insect population</p><p style="font-size: 16px;line-height: 0.2">Small size ears</p><p style='font-size: 16px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' target='_blank'><img src='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' target='_blank'><img src='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' target='_blank'><img src='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' target='_blank'><img src='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
-                popup_fa2b0c4aa69bb9e0841b7374600e751a.setContent(html_0ecf264ee0ff16a346338ad9c086865c);
+                var html_86e58ba1e2cba67e68de7d13d9c60f8c = $(`<div id="html_86e58ba1e2cba67e68de7d13d9c60f8c" style="width: 100.0%; height: 100.0%;"><p style="font-size: 12;line-height: 0.2">Medium size and green plants</p><p style="font-size: 12;line-height: 0.2">High insect population</p><p style="font-size: 12;line-height: 0.2">Small size ears</p><p style='font-size: 12px;line-height: 0.2'>Damage: 35</p><div style='display: flex;'><a href='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' target='_blank'><img src='./photos/e4249814-189b-4bb4-8cb2-af96cb12c8be.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' target='_blank'><img src='./photos/6f22cc02-1a00-4015-a33a-a1e72b03a1e2.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' target='_blank'><img src='./photos/d2ab8729-3550-4705-9550-fcf6e3408d35.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a><a href='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' target='_blank'><img src='./photos/6d59aadf-d6a7-42ff-bbc9-cda10e04b4e5.jpg' style='max-width:200px; max-height:400px; margin-right: 10px;'></a></div></div>`)[0];
+                popup_4bccf505d69026d055546d87205c6caa.setContent(html_86e58ba1e2cba67e68de7d13d9c60f8c);
             
         
 
-        marker_3450d697371d6085b36ce77c1e72bf25.bindPopup(popup_fa2b0c4aa69bb9e0841b7374600e751a)
+        marker_4edae3cfb0048a67edfc06f5fc75a4b4.bindPopup(popup_4bccf505d69026d055546d87205c6caa)
         ;
 
-        
-    
+        var url_to_geotiff_file=  'https://drive.google.com/uc?export=download&id=1-YYtxM5MYzJPXeHveMn2Mrw3RG1PliBd';
+
+fetch(url_to_geotiff_file)
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => {
+    parse_georaster(arrayBuffer).then(georaster => {
+      console.log("georaster:", georaster);
+
+      /*
+          GeoRasterLayer is an extension of GridLayer,
+          which means can use GridLayer options like opacity.
+
+          Just make sure to include the georaster option!
+
+          Optionally set the pixelValuesToColorFn function option to customize
+          how values for a pixel are translated to a color.
+
+          https://leafletjs.com/reference.html#gridlayer
+      */
+      var layer = new GeoRasterLayer({
+          georaster: georaster,
+          opacity: 0.7,
+          pixelValuesToColorFn: values => values[0] === 42 ? '#ffffff' : '#000000',
+          resolution: 64 // optional parameter for adjusting display resolution
+      });
+      layer.addTo(map_2325012c8fdfb533cb67d1a382b093a5);
+
+      map.fitBounds(layer.getBounds());
+
+  });
+});
+                
+          
 </script>
 </html>
