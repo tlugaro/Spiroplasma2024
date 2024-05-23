@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
     
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -1067,6 +1068,13 @@
         
     
             geo_json_6f68b36e46434a6078b8ef243f4b9184.addTo(map_09dbe10d14553d4abacb1704da66c541);
+            var logo = L.control({position: 'bottomleft'});
+    logo.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'logo');
+        div.innerHTML = '<img src="logo.jpg" alt="Logo">';
+        return div;
+    };
+    logo.addTo(map_09dbe10d14553d4abacb1704da66c541);
         
 </script>
 </html>
